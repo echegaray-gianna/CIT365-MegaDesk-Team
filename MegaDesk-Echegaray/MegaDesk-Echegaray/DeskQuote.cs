@@ -89,22 +89,22 @@ namespace MegaDesk_Echegaray
             switch (shippingDays)
             {
                 case "3":
-                    if (areaDesk < 1000) return 60;
-                    if (areaDesk >= 1000 && areaDesk <= 2000) return 70;
-                    if (areaDesk > 2000) return 80;
-                    return 0;
+                    if (areaDesk < 1000) { return rushPrices[0]; }
+                    else if (areaDesk >= 1000 && areaDesk <= 2000) { return rushPrices[1]; }
+                    else if (areaDesk > 2000) { return rushPrices[2]; }
+                    else { return 0; }
 
                 case "5":
-                    if (areaDesk < 1000) return 40;
-                    if (areaDesk >= 1000 && areaDesk <= 2000) return 50;
-                    if (areaDesk > 2000) return 60;
-                    return 0;
+                    if (areaDesk < 1000) { return rushPrices[3]; }
+                    else if (areaDesk >= 1000 && areaDesk <= 2000) { return rushPrices[4]; }
+                    else if (areaDesk > 2000) { return rushPrices[5]; }
+                    else { return 0; }
 
                 case "7":
-                    if (areaDesk < 1000) return 30;
-                    if (areaDesk >= 1000 && areaDesk <= 2000) return 35;
-                    if (areaDesk > 2000) return 40;
-                    return 0;
+                    if (areaDesk < 1000) { return rushPrices[6]; }
+                    else if (areaDesk >= 1000 && areaDesk <= 2000) { return rushPrices[7]; }
+                    else if (areaDesk > 2000) { return rushPrices[8]; }
+                    else { return 0; }
 
                 case "14":
                     return 0;
