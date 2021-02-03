@@ -73,6 +73,19 @@ namespace MegaDesk_Echegaray
         {
             int areaDesk = (area - 200) + 1000;
 
+            //open file
+            List<int> rushPrices = new List<int>();
+            String line;
+            System.IO.StreamReader file = new System.IO.StreamReader(@"rushOrderPrices.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                System.Console.WriteLine(line);
+                rushPrices.Add(Convert.ToInt32(line));
+            }
+            Console.WriteLine(rushPrices);
+            file.Close();
+
+
             switch (shippingDays)
             {
                 case "3":
