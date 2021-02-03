@@ -20,6 +20,49 @@ namespace MegaDesk_Echegaray
         public string totalDesk { get; set; }
 
 
+
+        // populate grid test///////////////////////////////////
+
+
+
+        public DeskQuote(string date, string name, string totalarea, string totaldrawer, string selectmaterial,
+            string totalmaterial, string selectshipping, string totalshipping, string desktotal)
+        {
+
+            this.currentDate = date;
+            this.customerInfo = name;
+            this.areaTotal = totalarea;
+            this.drawerTotal = totaldrawer;
+            this.materialSelected = selectmaterial;
+            this.materialTotal = totalmaterial;
+            this.shippingSelected = selectshipping;
+            this.shippingTotal = totalshipping;
+            this.totalDesk = desktotal;
+
+
+        }
+
+
+        public List<DeskQuote> GetQueryList()
+        {
+
+            //Manually add rows to the table
+            List<DeskQuote> lDeskQuote = new List<DeskQuote>();
+            DeskQuote oemp = new DeskQuote("24", "24", "24", "24", "24", "24", "24", "24", "24");
+            lDeskQuote.Add(oemp);
+            return lDeskQuote;
+        }
+
+        public DeskQuote()
+        {
+        }
+
+
+        /////////////////////////////////////////////
+
+
+
+
         Desk Desk = new Desk();
 
 
