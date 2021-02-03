@@ -30,32 +30,71 @@ namespace MegaDesk_Echegaray
         private void InitializeComponent()
         {
             this.btnSearchQuotesClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.materialComboBox = new System.Windows.Forms.ComboBox();
+            this.searchListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnSearchQuotesClose
             // 
-            this.btnSearchQuotesClose.Location = new System.Drawing.Point(557, 335);
+            this.btnSearchQuotesClose.Location = new System.Drawing.Point(449, 11);
+            this.btnSearchQuotesClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchQuotesClose.Name = "btnSearchQuotesClose";
-            this.btnSearchQuotesClose.Size = new System.Drawing.Size(169, 69);
+            this.btnSearchQuotesClose.Size = new System.Drawing.Size(73, 22);
             this.btnSearchQuotesClose.TabIndex = 0;
             this.btnSearchQuotesClose.Text = "Close";
             this.btnSearchQuotesClose.UseVisualStyleBackColor = true;
             this.btnSearchQuotesClose.Click += new System.EventHandler(this.btnSearchQuotesClose_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Search by Desktop Material";
+            // 
+            // materialComboBox
+            // 
+            this.materialComboBox.FormattingEnabled = true;
+            this.materialComboBox.Location = new System.Drawing.Point(156, 13);
+            this.materialComboBox.Name = "materialComboBox";
+            this.materialComboBox.Size = new System.Drawing.Size(121, 21);
+            this.materialComboBox.TabIndex = 2;
+            this.materialComboBox.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_SelectedIndexChanged);
+            // 
+            // searchListBox
+            // 
+            this.searchListBox.FormattingEnabled = true;
+            this.searchListBox.Location = new System.Drawing.Point(12, 53);
+            this.searchListBox.Name = "searchListBox";
+            this.searchListBox.Size = new System.Drawing.Size(509, 225);
+            this.searchListBox.TabIndex = 3;
+            this.searchListBox.SelectedIndexChanged += new System.EventHandler(this.searchListBox_SelectedIndexChanged);
+            // 
             // SearchQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.searchListBox);
+            this.Controls.Add(this.materialComboBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSearchQuotesClose);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnSearchQuotesClose;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox materialComboBox;
+        private System.Windows.Forms.ListBox searchListBox;
     }
 }
