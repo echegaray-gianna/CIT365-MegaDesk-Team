@@ -12,16 +12,33 @@ namespace MegaDesk_Echegaray
 {
     public partial class SearchQuotes : Form
     {
+        string listboxFormat = "{0,-15}\t{1,-20}\t{1,-20}\t{1,-20}\t{1,-20}";
         public SearchQuotes()
         {
             InitializeComponent();
+            CreateHeadRowSearchListBox();
         }
+        void CreateHeadRowSearchListBox()
+        {
+            searchListBox.Items.Clear();
+            searchListBox.Items.Add(string.Format(listboxFormat,"Material","Customer Name","Quote Date","Desk Specs","Price"));
 
+        }
         private void btnSearchQuotesClose_Click(object sender, EventArgs e)
         {
             MainMenu viewMainMenu = (MainMenu)Tag;
             viewMainMenu.Show();
             Close();
+        }
+
+        private void searchListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaterialComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
