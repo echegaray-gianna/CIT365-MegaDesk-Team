@@ -56,7 +56,7 @@ namespace MegaDesk_Echegaray
             {
 
                 string jsonData = JsonConvert.SerializeObject(DeskQuoteInfo, Formatting.Indented);
-                string path = "quotes.json";
+                string path = @"C:\Users\Gianna\source\repos\CIT365-MegaDesk-Team\MegaDesk-Echegaray\MegaDesk-Echegaray\quotes.json";
 
                 if (jsonData != null && jsonData != "")
                 {

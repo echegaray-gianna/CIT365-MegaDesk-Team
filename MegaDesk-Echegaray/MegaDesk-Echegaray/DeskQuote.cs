@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Echegaray
 {
-    class DeskQuote
+    public class DeskQuote
     {
+
         //this is used to create the JSON FILE 
         public string currentDate { get; set; }
         public string customerInfo { get; set; }
@@ -18,6 +21,25 @@ namespace MegaDesk_Echegaray
         public string shippingSelected { get; set; }
         public string shippingTotal { get; set; }
         public string totalDesk { get; set; }
+
+
+
+        // Populating the Grid /////
+        public List<DeskQuote>  GetQueryList() 
+        {
+            string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
+
+            List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+            //File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(quoteList));
+
+
+            return quoteList;
+        }
+
+       
+        /////////////////////////////////////////////
+
+
 
 
         Desk Desk = new Desk();

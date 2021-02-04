@@ -23,5 +23,15 @@ namespace MegaDesk_Echegaray
             viewMainMenu.Show();
             Close();
         }
+
+        private void ViewAllQuotes_Load(object sender, EventArgs e)
+        {
+            // Loads the grid display containing the added quotes
+
+            DeskQuote u = new DeskQuote();
+
+             dataGridDisplay.DataSource = u.GetQueryList();
+            
+        }
     }
 }
