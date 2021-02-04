@@ -36,9 +36,6 @@ namespace MegaDesk_Echegaray
 
         }
 
-        private void materialComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+       
     }
 }
