@@ -76,7 +76,7 @@ namespace MegaDesk_Echegaray
             //open file
             List<int> rushPrices = new List<int>();
             String line;
-            System.IO.StreamReader file = new System.IO.StreamReader(@"rushOrderPrices.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(@"../../rushOrderPrices.txt");
             while ((line = file.ReadLine()) != null)
             {
                 System.Console.WriteLine(line);
