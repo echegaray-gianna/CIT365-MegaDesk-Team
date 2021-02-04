@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Echegaray
 {
-    class DeskQuote
+    public class DeskQuote
     {
+
         //this is used to create the JSON FILE 
         public string currentDate { get; set; }
         public string customerInfo { get; set; }
@@ -21,43 +24,19 @@ namespace MegaDesk_Echegaray
 
 
 
-        // populate grid test///////////////////////////////////
-
-
-
-        public DeskQuote(string date, string name, string totalarea, string totaldrawer, string selectmaterial,
-            string totalmaterial, string selectshipping, string totalshipping, string desktotal)
+        // Populating the Grid /////
+        public List<DeskQuote>  GetQueryList() 
         {
+            string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
 
-            this.currentDate = date;
-            this.customerInfo = name;
-            this.areaTotal = totalarea;
-            this.drawerTotal = totaldrawer;
-            this.materialSelected = selectmaterial;
-            this.materialTotal = totalmaterial;
-            this.shippingSelected = selectshipping;
-            this.shippingTotal = totalshipping;
-            this.totalDesk = desktotal;
+            List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+            //File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(quoteList));
 
 
+            return quoteList;
         }
 
-
-        public List<DeskQuote> GetQueryList()
-        {
-
-            //Manually add rows to the table
-            List<DeskQuote> lDeskQuote = new List<DeskQuote>();
-            DeskQuote oemp = new DeskQuote("24", "24", "24", "24", "24", "24", "24", "24", "24");
-            lDeskQuote.Add(oemp);
-            return lDeskQuote;
-        }
-
-        public DeskQuote()
-        {
-        }
-
-
+       
         /////////////////////////////////////////////
 
 

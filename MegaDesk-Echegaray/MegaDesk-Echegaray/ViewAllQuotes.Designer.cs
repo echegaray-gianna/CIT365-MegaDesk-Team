@@ -37,7 +37,7 @@ namespace MegaDesk_Echegaray
             // btnViewAllQuotesClose
             // 
             this.btnViewAllQuotesClose.Location = new System.Drawing.Point(51, 343);
-            this.btnViewAllQuotesClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewAllQuotesClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewAllQuotesClose.Name = "btnViewAllQuotesClose";
             this.btnViewAllQuotesClose.Size = new System.Drawing.Size(143, 44);
             this.btnViewAllQuotesClose.TabIndex = 0;
@@ -50,17 +50,17 @@ namespace MegaDesk_Echegaray
             this.dataGridDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridDisplay.Location = new System.Drawing.Point(51, 12);
             this.dataGridDisplay.Name = "dataGridDisplay";
-            this.dataGridDisplay.Size = new System.Drawing.Size(515, 304);
+            this.dataGridDisplay.Size = new System.Drawing.Size(649, 316);
             this.dataGridDisplay.TabIndex = 1;
             // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 441);
+            this.ClientSize = new System.Drawing.Size(770, 437);
             this.Controls.Add(this.dataGridDisplay);
             this.Controls.Add(this.btnViewAllQuotesClose);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ViewAllQuotes";
             this.Text = "ViewAllQuotes";
             this.Load += new System.EventHandler(this.ViewAllQuotes_Load);

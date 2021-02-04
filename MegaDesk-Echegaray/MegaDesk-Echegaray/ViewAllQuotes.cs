@@ -30,7 +30,8 @@ namespace MegaDesk_Echegaray
 
             DeskQuote u = new DeskQuote();
 
-            dataGridDisplay.DataSource = u.GetQueryList();
+             dataGridDisplay.DataSource = u.GetQueryList();
+            
         }
     }
 }
