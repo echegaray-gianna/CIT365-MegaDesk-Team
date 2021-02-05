@@ -20,8 +20,8 @@ namespace MegaDesk_Echegaray
     public partial class AddQuote : Form
     {
         DeskQuote dq = new DeskQuote();
-        
-          
+
+
         public AddQuote()
         {
             InitializeComponent();
@@ -33,9 +33,6 @@ namespace MegaDesk_Echegaray
         public void AddQuote_Load(object sender, EventArgs e)
         {
             currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
-            shippingDays.SelectedIndex = 3;
-
-
 
         }
 
@@ -154,9 +151,8 @@ namespace MegaDesk_Echegaray
             int inputwidth = Int32.Parse(InputWidth.Text);
             int inputDepth = Int32.Parse(InputDepth.Text);
             int areaCost = dq.areaCalc(inputwidth, inputDepth);
-          
             return areaCost;
-            
+
         }
 
 
@@ -165,7 +161,6 @@ namespace MegaDesk_Echegaray
         {
             int drawers = Int32.Parse(DrawersNumber.Text);
             int drawerCost = dq.drawersCalc(drawers);
-           
             return drawerCost;
         }
 
@@ -174,7 +169,7 @@ namespace MegaDesk_Echegaray
         public string DesktopMaterial_SelectedIndexChanged()
         {
             string materialName = DesktopMaterial.SelectedItem.ToString();
-            
+
             return materialName;
 
         }
@@ -206,7 +201,6 @@ namespace MegaDesk_Echegaray
             string RushDays = shippingDays.Text.ToString();
             int areaCost = getInput();
             int shippingCost = dq.shippingCost(RushDays, areaCost);
-            
             return shippingCost;
         }
 
@@ -265,28 +259,15 @@ namespace MegaDesk_Echegaray
                 dq.materialSelected = materialSelected;
                 dq.materialTotal = materialTotal;
                 dq.shippingSelected = shippingSelected;
-                dq.shippingTotal = shippingTotal;
-                dq.totalDesk = deskTotal;
+                dq.shippingTotal = "$" + shippingTotal;
+                dq.totalDesk = "$" + deskTotal;
 
                 DeskQuote.dqList.Add(dq);
 
 
 
-                try
-                {
 
-                    string jsonData = JsonConvert.SerializeObject(DeskQuote.dqList, Formatting.Indented);
-                    string path = "quotes.json";
-
-                    File.WriteAllText(path, jsonData);
-
-                }
-                catch (IOException)
-                {
-
-                }
-
-              //  File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(DeskQuote.dqList));
+                File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(DeskQuote.dqList));
 
 
                 DisplayQuote viewDisplayQuote = new DisplayQuote(currentDateInfo, customerInfo, areaTotal, drawerTotal, materialSelected, materialTotal, shippingSelected, shippingTotal, deskTotal);

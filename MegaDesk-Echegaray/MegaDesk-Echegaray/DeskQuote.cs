@@ -27,6 +27,14 @@ namespace MegaDesk_Echegaray
         static public List<DeskQuote> dqList = new List<DeskQuote>();
         Desk Desk = new Desk();
 
+
+        //Desk Desk = new Desk();
+
+        // This is the List assigned to the Grid /////
+        static public List<DeskQuote> dqList = new List<DeskQuote>();
+        Desk Desk = new Desk();
+
+
         // Populating the Grid /////
         static public void GetQueryList()
         {
@@ -48,9 +56,8 @@ namespace MegaDesk_Echegaray
         //{
         //    string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
 
-        //    List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
-        //    //File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(quoteList));
 
+        /////////////////////////////////////////////
 
         //    return quoteList;
         //}

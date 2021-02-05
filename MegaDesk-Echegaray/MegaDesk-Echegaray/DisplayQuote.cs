@@ -16,9 +16,11 @@ namespace MegaDesk_Echegaray
 {
     public partial class DisplayQuote : Form
     {
-
+        DeskQuote DeskQuote = new DeskQuote();
+        
         AddQuote addQuote = new AddQuote();
-
+        
+      
         public string date { get; set; }
         public string clientName { get; set; }
 
