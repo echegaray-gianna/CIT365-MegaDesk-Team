@@ -17,7 +17,7 @@ namespace MegaDesk_Echegaray
 {
     public partial class AddQuote : Form
     {
-        DeskQuote DeskQuote = new DeskQuote();
+        DeskQuote dq = new DeskQuote();
         
           
         public AddQuote()
@@ -148,7 +148,7 @@ namespace MegaDesk_Echegaray
         {
             int inputwidth = Int32.Parse(InputWidth.Text);
             int inputDepth = Int32.Parse(InputDepth.Text);
-            int areaCost = DeskQuote.areaCalc(inputwidth, inputDepth);
+            int areaCost = dq.areaCalc(inputwidth, inputDepth);
           
             return areaCost;
             
@@ -159,7 +159,7 @@ namespace MegaDesk_Echegaray
         public int DrawersCalc()
         {
             int drawers = Int32.Parse(DrawersNumber.Text);
-            int drawerCost = DeskQuote.drawersCalc(drawers);
+            int drawerCost = dq.drawersCalc(drawers);
            
             return drawerCost;
         }
@@ -180,7 +180,7 @@ namespace MegaDesk_Echegaray
         {
             string materialChosen = DesktopMaterial_SelectedIndexChanged();
             string material = materialChosen;
-            int materialPrice = DeskQuote.deskMaterialCalc(material);
+            int materialPrice = dq.deskMaterialCalc(material);
 
             return materialPrice;
         }
@@ -200,7 +200,7 @@ namespace MegaDesk_Echegaray
         {
             string RushDays = shippingDays.Text.ToString();
             int areaCost = getInput();
-            int shippingCost = DeskQuote.shippingCost(RushDays, areaCost);
+            int shippingCost = dq.shippingCost(RushDays, areaCost);
             
             return shippingCost;
         }
@@ -222,8 +222,8 @@ namespace MegaDesk_Echegaray
             //price for Shipping
             int shippingCost = shippingDays_SelectedIndexChanged();
 
-            //Taking all the prices and send them to deskQuote to calculation
-            int totalCost = DeskQuote.totalCalc(areaCost, drawerCost, materialPrice, shippingCost);
+            //Taking all the prices and send them to dq to calculation
+            int totalCost = dq.totalCalc(areaCost, drawerCost, materialPrice, shippingCost);
 
             return totalCost;
         }
@@ -252,6 +252,24 @@ namespace MegaDesk_Echegaray
                 string shippingSelected = shippingDays_Selected();
                 string shippingTotal = Convert.ToString(shippingDays_SelectedIndexChanged());
                 string deskTotal = Convert.ToString(totalMath());
+
+                dq.currentDate = currentDateInfo;
+                dq.customerInfo = customerInfo;
+                dq.areaTotal = areaTotal;
+                dq.drawerTotal = drawerTotal;
+                dq.materialSelected = materialSelected;
+                dq.materialTotal = materialTotal;
+                dq.shippingSelected = shippingSelected;
+                dq.shippingTotal = shippingTotal;
+                dq.totalDesk = deskTotal;
+
+                DeskQuote.dqList.Add(dq);
+                
+
+               
+
+                File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(DeskQuote.dqList));
+
 
                 DisplayQuote viewDisplayQuote = new DisplayQuote(currentDateInfo, customerInfo, areaTotal, drawerTotal, materialSelected, materialTotal, shippingSelected, shippingTotal, deskTotal);
                 viewDisplayQuote.Tag = this;

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-using Newtonsoft.Json;
+using System.Windows.Forms;
 
 namespace MegaDesk_Echegaray
 {
@@ -43,6 +44,26 @@ namespace MegaDesk_Echegaray
 
 
         Desk Desk = new Desk();
+
+
+        // Populating the Grid /////
+        static public void GetQueryList()
+        {
+            try {
+                string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
+                dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+                Console.WriteLine(dqList[0].customerInfo);
+            }
+            catch (FileNotFoundException e)
+            {
+                MessageBox.Show("No file found");
+            }
+        }
+
+
+        /////////////////////////////////////////////
+
+
 
 
         // Area Calculation 

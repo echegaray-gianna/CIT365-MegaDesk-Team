@@ -15,6 +15,8 @@ namespace MegaDesk_Echegaray
         public MainMenu()
         {
             InitializeComponent();
+            DeskQuote.GetQueryList();
+            Console.WriteLine(DeskQuote.dqList[0].customerInfo);
         }
 
         private void btnAddNewQuote_Click(object sender, EventArgs e)
