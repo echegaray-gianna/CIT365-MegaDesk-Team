@@ -39,11 +39,8 @@ namespace MegaDesk_Echegaray
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            string material = materialComboBox.Text;
-            string path = @"C:\Users\Gianna\source\repos\CIT365-MegaDesk-Team\MegaDesk-Echegaray\MegaDesk-Echegaray\quotes.json";
-            var json = System.IO.File.ReadAllText(path);
-            List<DeskQuote> quotes = new List<DeskQuote>();
-            //quotes = JsonConvert.DeserializeObject<DeskQuote>(json);
+            
+           
 
         }
     }
