@@ -15,7 +15,6 @@ namespace MegaDesk_Echegaray
         public SearchQuotes()
         {
             InitializeComponent();
-            DeskQuote.GetQueryList();
         }
 
         private void btnSearchQuotesClose_Click(object sender, EventArgs e)
