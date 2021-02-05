@@ -71,7 +71,6 @@ namespace MegaDesk_Echegaray
             this.searchListBox.Name = "searchListBox";
             this.searchListBox.Size = new System.Drawing.Size(509, 225);
             this.searchListBox.TabIndex = 3;
-            this.searchListBox.SelectedIndexChanged += new System.EventHandler(this.searchListBox_SelectedIndexChanged);
             // 
             // searchButton
             // 

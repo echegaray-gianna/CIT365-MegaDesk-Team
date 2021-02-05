@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MegaDesk_Echegaray
 {
@@ -19,14 +22,26 @@ namespace MegaDesk_Echegaray
         public string shippingTotal { get; set; }
         public string totalDesk { get; set; }
 
-
+        static public List<DeskQuote> dqList = new List<DeskQuote>();
         Desk Desk = new Desk();
 
-        //constructor 
+        static public void GetQueryList()
+        {
+            try
+            {
+                string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
+                dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+            }
+            catch(FileNotFoundException e)
+            {
+                MessageBox.Show("No file found");
+            }
+        }
         public DeskQuote()
         {
 
         }
+        
         public DeskQuote(string currentDate, string customerInfo, string areaTotal, string drawerTotal, string materialSelected, string materialTotal, 
             string shippingSelected, string shippingTotal, string totalDesk)
         {
