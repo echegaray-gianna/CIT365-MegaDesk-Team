@@ -23,21 +23,42 @@ namespace MegaDesk_Echegaray
         public string totalDesk { get; set; }
 
 
-        
 
-        
+
+        //Desk Desk = new Desk();
+
+        // This is the List assigned to the Grid /////
+        static public List<DeskQuote> dqList = new List<DeskQuote>();
+        Desk Desk = new Desk();
+
 
         // Populating the Grid /////
-        public List<DeskQuote> GetQueryList() 
+        static public List<DeskQuote> GetQueryList()
         {
-            string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
+            
+                string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
+                List<DeskQuote> dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
 
-            List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
-            //File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(quoteList));
-
-
-            return quoteList;
+                return dqList;
+                
+            
+            
         }
+
+
+
+        //static public List<DeskQuote> GetQueryList()
+        //{
+
+        //    string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
+        //    List<DeskQuote> dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+
+        //    return dqList;
+
+
+
+        //}
+
 
 
         /////////////////////////////////////////////
@@ -45,7 +66,6 @@ namespace MegaDesk_Echegaray
 
 
 
-        Desk Desk = new Desk();
 
 
         // Area Calculation 

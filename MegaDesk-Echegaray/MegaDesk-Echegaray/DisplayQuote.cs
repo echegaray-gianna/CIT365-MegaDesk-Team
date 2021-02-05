@@ -64,7 +64,7 @@ namespace MegaDesk_Echegaray
 
                 if (jsonData != null && jsonData != "")
                 {
-                    File.AppendAllText(path, jsonData + ", " + Environment.NewLine);
+                    File.AppendAllText(path, jsonData + Environment.NewLine);
                 }
                 else
                 {
