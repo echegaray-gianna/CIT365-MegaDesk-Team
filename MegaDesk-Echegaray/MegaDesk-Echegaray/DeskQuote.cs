@@ -24,15 +24,9 @@ namespace MegaDesk_Echegaray
         public string totalDesk { get; set; }
 
 
-        static public List<DeskQuote> dqList = new List<DeskQuote>();
-        Desk Desk = new Desk();
-
-
-        //Desk Desk = new Desk();
 
         // This is the List assigned to the Grid /////
         static public List<DeskQuote> dqList = new List<DeskQuote>();
-        Desk Desk = new Desk();
 
 
         // Populating the Grid /////
