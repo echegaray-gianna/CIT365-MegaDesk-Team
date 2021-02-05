@@ -43,7 +43,7 @@ namespace MegaDesk_Echegaray
             string path = @"C:\Users\Gianna\source\repos\CIT365-MegaDesk-Team\MegaDesk-Echegaray\MegaDesk-Echegaray\quotes.json";
             var json = System.IO.File.ReadAllText(path);
             List<DeskQuote> quotes = new List<DeskQuote>();
-            quotes = JsonConvert.DeserializeObject<DeskQuote>(json);
+            //quotes = JsonConvert.DeserializeObject<DeskQuote>(json);
 
         }
     }

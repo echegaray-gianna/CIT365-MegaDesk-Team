@@ -22,6 +22,24 @@ namespace MegaDesk_Echegaray
 
         Desk Desk = new Desk();
 
+        //constructor 
+        public DeskQuote()
+        {
+
+        }
+        public DeskQuote(string currentDate, string customerInfo, string areaTotal, string drawerTotal, string materialSelected, string materialTotal, 
+            string shippingSelected, string shippingTotal, string totalDesk)
+        {
+            this.currentDate = currentDate;
+            this.customerInfo = customerInfo;
+            this.areaTotal = areaTotal;
+            this.drawerTotal = drawerTotal;
+            this.materialSelected = materialSelected;
+            this.materialTotal = materialTotal;
+            this.shippingSelected = shippingSelected;
+            this.shippingTotal = shippingTotal;
+            this.totalDesk = totalDesk;
+        }
 
         // Area Calculation 
         public int areaCalc(int width, int depth)

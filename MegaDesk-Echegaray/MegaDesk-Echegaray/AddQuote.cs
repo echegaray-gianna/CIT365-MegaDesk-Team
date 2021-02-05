@@ -254,7 +254,21 @@ namespace MegaDesk_Echegaray
                 string shippingTotal = Convert.ToString(shippingDays_SelectedIndexChanged());
                 string deskTotal = Convert.ToString(totalMath());
 
-                DisplayQuote viewDisplayQuote = new DisplayQuote(currentDateInfo, customerInfo, areaTotal, drawerTotal, materialSelected, materialTotal, shippingSelected, shippingTotal, deskTotal);
+                DeskQuote newQuote = new DeskQuote(currentDateInfo, customerInfo, areaTotal, drawerTotal, materialSelected, materialTotal, shippingSelected,
+                    shippingTotal, deskTotal);
+
+                string jsonData = JsonConvert.SerializeObject(newQuote, Formatting.Indented);
+                string path = @"C:\Users\Gianna\source\repos\CIT365-MegaDesk-Team\MegaDesk-Echegaray\MegaDesk-Echegaray\quotes.json";
+
+                if (jsonData != null && jsonData != "")
+                {
+                    File.AppendAllText(path, jsonData + Environment.NewLine);
+                }
+                else
+                {
+                    File.WriteAllText(path, jsonData);
+                }
+                DisplayQuote viewDisplayQuote = new DisplayQuote(jsonData);
                 viewDisplayQuote.Tag = this;
                 viewDisplayQuote.Show(this);
                 Hide();

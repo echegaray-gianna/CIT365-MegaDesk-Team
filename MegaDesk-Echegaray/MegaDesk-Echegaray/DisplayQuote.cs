@@ -16,13 +16,27 @@ namespace MegaDesk_Echegaray
 {
     public partial class DisplayQuote : Form
     {
+        public DisplayQuote(string jsonData)
+        {
+            DeskQuote viewQuote = (DeskQuote)JsonConvert.DeserializeObject(jsonData);
+            quoteDate.Text = viewQuote.currentDate;
+            custName.Text = viewQuote.customerInfo;
+            areaCost.Text = viewQuote.areaTotal;
+            drawerCost.Text = viewQuote.drawerTotal;
+            materialName.Text = viewQuote.materialSelected;
+            materialCost.Text = viewQuote.materialTotal;
+            shippingMethod.Text = viewQuote.shippingSelected;
+            shippingCost.Text = viewQuote.shippingTotal;
+            totalCost.Text = viewQuote.totalDesk;
 
+        }
         AddQuote addQuote = new AddQuote();
 
         public string date { get; set; }
         public string clientName { get; set; }
 
-
+        
+        /*
         public DisplayQuote(string currentDateInfo, string customerInfo, string areaTotal, string drawerTotal, string materialSelected, string materialTotal, string shippingSelected, string shippingTotal, string totalDesk)
         {
             InitializeComponent();
@@ -74,7 +88,7 @@ namespace MegaDesk_Echegaray
             }
 
         }
-
+        */
 
         private void backBtn_Click(object sender, EventArgs e)
         {
