@@ -23,9 +23,12 @@ namespace MegaDesk_Echegaray
         public string totalDesk { get; set; }
 
 
+        
+
+        
 
         // Populating the Grid /////
-        public List<DeskQuote>  GetQueryList() 
+        public List<DeskQuote> GetQueryList() 
         {
             string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
 
@@ -36,7 +39,7 @@ namespace MegaDesk_Echegaray
             return quoteList;
         }
 
-       
+
         /////////////////////////////////////////////
 
 
