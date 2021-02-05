@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MegaDesk_Echegaray
 {
@@ -18,30 +21,31 @@ namespace MegaDesk_Echegaray
         public string shippingSelected { get; set; }
         public string shippingTotal { get; set; }
         public string totalDesk { get; set; }
-
+       
+        
+        static public List<DeskQuote> dqList = new List<DeskQuote>();
+        Desk Desk = new Desk();
 
 
         // Populating the Grid /////
-        public List<DeskQuote>  GetQueryList() 
+        static public void GetQueryList()
         {
-            string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
-
-            List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
-            //File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(quoteList));
-
-
-            return quoteList;
+            try {
+                string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
+                dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+                Console.WriteLine(dqList[0].customerInfo);
+            }
+            catch (FileNotFoundException e)
+            {
+                MessageBox.Show("No file found");
+            }
         }
 
-       
+
         /////////////////////////////////////////////
 
 
 
-
-        Desk Desk = new Desk();
-
-        static public List<DeskQuote> dqList = new List<DeskQuote>();
 
         // Area Calculation 
         public int areaCalc(int width, int depth)

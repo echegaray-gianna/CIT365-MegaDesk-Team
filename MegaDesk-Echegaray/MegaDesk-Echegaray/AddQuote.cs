@@ -256,6 +256,14 @@ namespace MegaDesk_Echegaray
 
                 dq.currentDate = currentDateInfo;
                 dq.customerInfo = customerInfo;
+                dq.areaTotal = areaTotal;
+                dq.drawerTotal = drawerTotal;
+                dq.materialSelected = materialSelected;
+                dq.materialTotal = materialTotal;
+                dq.shippingSelected = shippingSelected;
+                dq.shippingTotal = shippingTotal;
+                dq.totalDesk = deskTotal;
+
                 DeskQuote.dqList.Add(dq);
                 
 
