@@ -226,7 +226,7 @@ namespace MegaDesk_Echegaray
             //Taking all the prices and send them to dq to calculation
             int totalCost = dq.totalCalc(areaCost, drawerCost, materialPrice, shippingCost);
 
-            return + totalCost;
+            return totalCost;
         }
 
         // Submit Botton 
