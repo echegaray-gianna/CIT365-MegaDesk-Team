@@ -33,12 +33,13 @@ namespace MegaDesk_Echegaray
             this.label1 = new System.Windows.Forms.Label();
             this.materialComboBox = new System.Windows.Forms.ComboBox();
             this.searchListBox = new System.Windows.Forms.ListBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSearchQuotesClose
             // 
             this.btnSearchQuotesClose.Location = new System.Drawing.Point(449, 11);
-            this.btnSearchQuotesClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchQuotesClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchQuotesClose.Name = "btnSearchQuotesClose";
             this.btnSearchQuotesClose.Size = new System.Drawing.Size(73, 22);
             this.btnSearchQuotesClose.TabIndex = 0;
@@ -72,16 +73,27 @@ namespace MegaDesk_Echegaray
             this.searchListBox.TabIndex = 3;
             this.searchListBox.SelectedIndexChanged += new System.EventHandler(this.searchListBox_SelectedIndexChanged);
             // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(283, 13);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(68, 23);
+            this.searchButton.TabIndex = 4;
+            this.searchButton.Text = "&Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchListBox);
             this.Controls.Add(this.materialComboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSearchQuotesClose);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
             this.ResumeLayout(false);
@@ -95,5 +107,6 @@ namespace MegaDesk_Echegaray
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox materialComboBox;
         private System.Windows.Forms.ListBox searchListBox;
+        private System.Windows.Forms.Button searchButton;
     }
 }
