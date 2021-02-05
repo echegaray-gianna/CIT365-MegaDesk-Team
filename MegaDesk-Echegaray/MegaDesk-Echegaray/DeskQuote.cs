@@ -20,8 +20,28 @@ namespace MegaDesk_Echegaray
         public string totalDesk { get; set; }
 
 
+
+        // Populating the Grid /////
+        public List<DeskQuote>  GetQueryList() 
+        {
+            string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
+
+            List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+            //File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(quoteList));
+
+
+            return quoteList;
+        }
+
+       
+        /////////////////////////////////////////////
+
+
+
+
         Desk Desk = new Desk();
 
+        static public List<DeskQuote> dqList = new List<DeskQuote>();
 
         // Area Calculation 
         public int areaCalc(int width, int depth)
