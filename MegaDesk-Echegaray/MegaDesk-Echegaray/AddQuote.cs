@@ -14,6 +14,7 @@ using Newtonsoft.Json.Linq;
 
 
 
+
 namespace MegaDesk_Echegaray
 {
     public partial class AddQuote : Form
@@ -150,7 +151,6 @@ namespace MegaDesk_Echegaray
             int inputwidth = Int32.Parse(InputWidth.Text);
             int inputDepth = Int32.Parse(InputDepth.Text);
             int areaCost = dq.areaCalc(inputwidth, inputDepth);
-
             return areaCost;
 
         }
@@ -161,7 +161,6 @@ namespace MegaDesk_Echegaray
         {
             int drawers = Int32.Parse(DrawersNumber.Text);
             int drawerCost = dq.drawersCalc(drawers);
-
             return drawerCost;
         }
 
@@ -202,7 +201,6 @@ namespace MegaDesk_Echegaray
             string RushDays = shippingDays.Text.ToString();
             int areaCost = getInput();
             int shippingCost = dq.shippingCost(RushDays, areaCost);
-
             return shippingCost;
         }
 
@@ -288,6 +286,17 @@ namespace MegaDesk_Echegaray
             viewMainMenu.Show();
             Close();
 
+        }
+
+        private void answer_Enter(object sender, EventArgs e)
+        {
+            NumericUpDown answerBox = sender as NumericUpDown;
+
+            if (answerBox != null)
+            {
+                int lengthOfAnswer = answerBox.Value.ToString().Length;
+                answerBox.Select(0, lengthOfAnswer);
+            }
         }
 
     }

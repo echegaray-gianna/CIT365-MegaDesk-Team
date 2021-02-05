@@ -156,6 +156,7 @@ namespace MegaDesk_Echegaray
             this.DrawersNumber.Name = "DrawersNumber";
             this.DrawersNumber.Size = new System.Drawing.Size(75, 20);
             this.DrawersNumber.TabIndex = 9;
+            this.DrawersNumber.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // dMaterial
             // 

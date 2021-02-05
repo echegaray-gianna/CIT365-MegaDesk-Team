@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-using Newtonsoft.Json;
+using System.Windows.Forms;
 
 namespace MegaDesk_Echegaray
 {
@@ -23,6 +24,8 @@ namespace MegaDesk_Echegaray
         public string totalDesk { get; set; }
 
 
+        static public List<DeskQuote> dqList = new List<DeskQuote>();
+        Desk Desk = new Desk();
 
 
         //Desk Desk = new Desk();
@@ -33,36 +36,34 @@ namespace MegaDesk_Echegaray
 
 
         // Populating the Grid /////
-        static public List<DeskQuote> GetQueryList()
+        static public void GetQueryList()
         {
-            
+            try
+            {
                 string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
-                List<DeskQuote> dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
-
-                return dqList;
-                
-            
-            
+                dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+                Console.WriteLine(dqList[0].customerInfo);
+            }
+            catch (FileNotFoundException e)
+            {
+                MessageBox.Show("No file found");
+            }
         }
 
 
-
-        //static public List<DeskQuote> GetQueryList()
+        // Diego's Code /////
+        //public List<DeskQuote>  GetQueryList() 
         //{
-
-        //    string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
-        //    List<DeskQuote> dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
-
-        //    return dqList;
-
-
-
-        //}
-
+        //    string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
 
 
         /////////////////////////////////////////////
 
+        //    return quoteList;
+        //}
+
+
+        /////////////////////////////////////////////
 
 
 
