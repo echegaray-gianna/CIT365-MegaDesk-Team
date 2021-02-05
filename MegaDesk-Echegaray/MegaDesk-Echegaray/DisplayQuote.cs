@@ -52,26 +52,26 @@ namespace MegaDesk_Echegaray
             DeskQuoteInfo.shippingTotal = shippingTotal;
             DeskQuoteInfo.totalDesk = totalDesk;
 
-            try
-            {
+            //try
+            //{
 
-                string jsonData = JsonConvert.SerializeObject(DeskQuoteInfo, Formatting.Indented);
-                string path = "quotes.json";
+            //    string jsonData = JsonConvert.SerializeObject(DeskQuoteInfo, Formatting.Indented);
+            //    string path = "quotes.json";
 
-                if (jsonData != null && jsonData != "")
-                {
-                    File.AppendAllText(path, jsonData + Environment.NewLine);
-                }
-                else
-                {
-                    File.WriteAllText(path, jsonData);
-                }
+            //    if (jsonData != null && jsonData != "")
+            //    {
+            //        File.AppendAllText(path, jsonData + Environment.NewLine);
+            //    }
+            //    else
+            //    {
+            //        File.WriteAllText(path, jsonData);
+            //    }
 
-            }
-            catch (IOException e)
-            {
+            //}
+            //catch (IOException e)
+            //{
 
-            }
+            //}
 
         }
 

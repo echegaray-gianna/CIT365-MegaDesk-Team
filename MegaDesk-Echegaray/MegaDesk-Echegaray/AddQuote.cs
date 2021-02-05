@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 
 
@@ -264,11 +266,24 @@ namespace MegaDesk_Echegaray
                 dq.totalDesk = deskTotal;
 
                 DeskQuote.dqList.Add(dq);
-                
 
-               
 
-                File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(DeskQuote.dqList));
+
+                try
+                {
+
+                    string jsonData = JsonConvert.SerializeObject(DeskQuote.dqList, Formatting.Indented);
+                    string path = "quotes.json";
+
+                    File.WriteAllText(path, jsonData);
+
+                }
+                catch (IOException)
+                {
+
+                }
+
+              //  File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(DeskQuote.dqList));
 
 
                 DisplayQuote viewDisplayQuote = new DisplayQuote(currentDateInfo, customerInfo, areaTotal, drawerTotal, materialSelected, materialTotal, shippingSelected, shippingTotal, deskTotal);

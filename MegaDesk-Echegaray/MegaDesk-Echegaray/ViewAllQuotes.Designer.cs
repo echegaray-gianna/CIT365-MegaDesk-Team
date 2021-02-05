@@ -63,7 +63,7 @@ namespace MegaDesk_Echegaray
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ViewAllQuotes";
             this.Text = "ViewAllQuotes";
-            this.Load += new System.EventHandler(this.ViewAllQuotes_Load);
+            //this.Load += new System.EventHandler(this.ViewAllQuotes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplay)).EndInit();
             this.ResumeLayout(false);
 

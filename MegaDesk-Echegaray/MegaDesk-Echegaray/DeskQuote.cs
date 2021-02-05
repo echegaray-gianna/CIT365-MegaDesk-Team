@@ -24,32 +24,14 @@ namespace MegaDesk_Echegaray
         public string totalDesk { get; set; }
 
 
-
-        // Populating the Grid /////
-        public List<DeskQuote>  GetQueryList() 
-        {
-            string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
-
-            List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
-            //File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(quoteList));
-
-
-            return quoteList;
-        }
-
-       
-        /////////////////////////////////////////////
-
-
-
-
+        static public List<DeskQuote> dqList = new List<DeskQuote>();
         Desk Desk = new Desk();
-
 
         // Populating the Grid /////
         static public void GetQueryList()
         {
-            try {
+            try
+            {
                 string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
                 dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
                 Console.WriteLine(dqList[0].customerInfo);
@@ -61,7 +43,21 @@ namespace MegaDesk_Echegaray
         }
 
 
+        // Diego's Code /////
+        //public List<DeskQuote>  GetQueryList() 
+        //{
+        //    string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
+
+        //    List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+        //    //File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(quoteList));
+
+
+        //    return quoteList;
+        //}
+
+
         /////////////////////////////////////////////
+
 
 
 
