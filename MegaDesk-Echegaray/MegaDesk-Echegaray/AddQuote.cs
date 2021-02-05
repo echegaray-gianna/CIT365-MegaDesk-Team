@@ -226,7 +226,7 @@ namespace MegaDesk_Echegaray
             //Taking all the prices and send them to dq to calculation
             int totalCost = dq.totalCalc(areaCost, drawerCost, materialPrice, shippingCost);
 
-            return totalCost;
+            return + totalCost;
         }
 
         // Submit Botton 
@@ -261,8 +261,8 @@ namespace MegaDesk_Echegaray
                 dq.materialSelected = materialSelected;
                 dq.materialTotal = materialTotal;
                 dq.shippingSelected = shippingSelected;
-                dq.shippingTotal = shippingTotal;
-                dq.totalDesk = deskTotal;
+                dq.shippingTotal = "$" + shippingTotal;
+                dq.totalDesk = "$" + deskTotal;
 
                 DeskQuote.dqList.Add(dq);
 
