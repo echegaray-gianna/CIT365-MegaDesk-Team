@@ -18,45 +18,68 @@ namespace MegaDesk_Echegaray
     {
 
         AddQuote addQuote = new AddQuote();
+        DeskQuote DeskQuote = new DeskQuote();
 
         public string date { get; set; }
         public string clientName { get; set; }
 
 
-        public DisplayQuote(string currentDateInfo, string customerInfo, string areaTotal, string drawerTotal, string materialSelected, string materialTotal, string shippingSelected, string shippingTotal, string totalDesk)
+        public DisplayQuote(DeskQuote deskQuote)
         {
             InitializeComponent();
 
-            quoteDate.Text = currentDateInfo;
-            custName.Text = customerInfo;
+            string currentDate = addQuote.currentDateInfo();
+            string custtomerInfo = addQuote.customerInfo();
+            string areaTotal = Convert.ToString(addQuote.getInput());
+            string drawerTotal = Convert.ToString(addQuote.DrawersCalc());
+            string materialSelected = addQuote.DesktopMaterial_SelectedIndexChanged();
+            string materialTotal = Convert.ToString(addQuote.deskMaterial());
+            string shippingSelected = addQuote.shippingDays_Selected();
+            string shippingTotal = Convert.ToString(addQuote.shippingDays_SelectedIndexChanged());
+            string deskTotal = Convert.ToString(addQuote.totalMath());
+
+            DeskQuote.currentDate = addQuote.currentDateInfo();
+            DeskQuote.customerInfo = addQuote.customerInfo();
+            DeskQuote.areaTotal = Convert.ToString(addQuote.getInput());
+            DeskQuote.drawerTotal = Convert.ToString(addQuote.DrawersCalc());
+            DeskQuote.materialSelected = addQuote.DesktopMaterial_SelectedIndexChanged();
+            DeskQuote.materialTotal = Convert.ToString(addQuote.deskMaterial());
+            DeskQuote.shippingSelected = addQuote.shippingDays_Selected();
+            DeskQuote.shippingTotal = Convert.ToString(addQuote.shippingDays_SelectedIndexChanged());
+            DeskQuote.totalDesk = Convert.ToString(addQuote.totalMath());
+
+            quoteDate.Text = currentDate;
+            custName.Text = custtomerInfo;
             areaCost.Text = areaTotal;
             drawerCost.Text = drawerTotal;
             materialName.Text = materialSelected;
             materialCost.Text = materialTotal;
             shippingMethod.Text = shippingSelected;
             shippingCost.Text = shippingTotal;
-            totalCost.Text = totalDesk;
+            totalCost.Text = deskTotal;
+
 
 
 
             // This is used to create the JSON FILE to store the info 
             DeskQuote DeskQuoteInfo = new DeskQuote();
 
-            DeskQuoteInfo.currentDate = currentDateInfo;
-            DeskQuoteInfo.customerInfo = customerInfo;
+            DeskQuoteInfo.currentDate = currentDate;
+            DeskQuoteInfo.customerInfo = custtomerInfo;
             DeskQuoteInfo.areaTotal = areaTotal;
             DeskQuoteInfo.drawerTotal = drawerTotal;
             DeskQuoteInfo.materialSelected = materialSelected;
             DeskQuoteInfo.materialTotal = materialTotal;
             DeskQuoteInfo.shippingSelected = shippingSelected;
             DeskQuoteInfo.shippingTotal = shippingTotal;
-            DeskQuoteInfo.totalDesk = totalDesk;
+            DeskQuoteInfo.totalDesk = deskTotal;
 
             try
             {
-
                 string jsonData = JsonConvert.SerializeObject(DeskQuoteInfo, Formatting.Indented);
-                string path = @"C:\Users\Gianna\source\repos\CIT365-MegaDesk-Team\MegaDesk-Echegaray\MegaDesk-Echegaray\quotes.json";
+                string path = "quotes.json";
+
+
 
                 if (jsonData != null && jsonData != "")
                 {
@@ -66,6 +89,8 @@ namespace MegaDesk_Echegaray
                 {
                     File.WriteAllText(path, jsonData);
                 }
+
+
 
             }
             catch (IOException e)

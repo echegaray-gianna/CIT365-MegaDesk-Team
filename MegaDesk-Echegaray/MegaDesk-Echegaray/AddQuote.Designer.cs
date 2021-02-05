@@ -208,7 +208,7 @@ namespace MegaDesk_Echegaray
             this.currentDate.AutoSize = true;
             this.currentDate.Location = new System.Drawing.Point(284, 37);
             this.currentDate.Name = "currentDate";
-            this.currentDate.Size = new System.Drawing.Size(62, 30);
+            this.currentDate.Size = new System.Drawing.Size(41, 20);
             this.currentDate.TabIndex = 17;
             this.currentDate.Text = "date";
             // 

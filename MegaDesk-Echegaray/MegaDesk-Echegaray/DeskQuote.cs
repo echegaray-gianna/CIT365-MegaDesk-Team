@@ -8,9 +8,9 @@ using Newtonsoft.Json;
 
 namespace MegaDesk_Echegaray
 {
+
     public class DeskQuote
     {
-
         //this is used to create the JSON FILE 
         public string currentDate { get; set; }
         public string customerInfo { get; set; }
@@ -25,7 +25,7 @@ namespace MegaDesk_Echegaray
 
 
         // Populating the Grid /////
-        public List<DeskQuote>  GetQueryList() 
+        public  List<DeskQuote>  GetQueryList() 
         {
             string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
 

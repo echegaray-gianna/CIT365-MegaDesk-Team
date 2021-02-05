@@ -25,6 +25,7 @@ namespace MegaDesk_Echegaray
             InitializeComponent();
             DesktopMaterial.DataSource = Enum.GetValues(typeof(DesktopMaterialList));
 
+
         }
 
         //Add Current Date
@@ -50,7 +51,7 @@ namespace MegaDesk_Echegaray
                     MessageBox.Show(message, title);
 
                 }
-                else if (double.Parse(InputWidth.Text) < Desk.minWidth)
+                else if (int.Parse(InputWidth.Text) < Desk.minWidth)
                 {
                     InputWidth.Text = "";
                     InputWidth.BackColor = Color.Red;
@@ -58,7 +59,7 @@ namespace MegaDesk_Echegaray
                     string title = "Error";
                     MessageBox.Show(message, title);
                 }
-                else if (double.Parse(InputWidth.Text) > Desk.maxWidth)
+                else if (int.Parse(InputWidth.Text) > Desk.maxWidth)
                 {
                     InputWidth.Text = "";
                     InputWidth.BackColor = Color.Red;
@@ -104,7 +105,7 @@ namespace MegaDesk_Echegaray
         {
             try
             {
-                if (double.Parse(InputDepth.Text) < Desk.minDepth)
+                if (int.Parse(InputDepth.Text) < Desk.minDepth)
                 {
                     InputDepth.Text = "";
                     InputDepth.BackColor = Color.Red;
@@ -112,7 +113,7 @@ namespace MegaDesk_Echegaray
                     string title = "Error";
                     MessageBox.Show(message, title);
                 }
-                else if (double.Parse(InputDepth.Text) > Desk.maxDepth)
+                else if (int.Parse(InputDepth.Text) > Desk.maxDepth)
                 {
                     InputDepth.Text = "";
                     InputDepth.BackColor = Color.Red;
@@ -141,13 +142,31 @@ namespace MegaDesk_Echegaray
         // END OF VALIDATION!!!
 
 
-        // Getting information and send them to desk Quote for calculation
+        //Passign information 
+        //Current Date
+        public string currentDateInfo()
+        {
+            string dateInfo = currentDate.Text;
 
+            return dateInfo;
+        }
+
+        //Customer Name
+        public string customerInfo()
+        {
+            string customerData = customerName.Text;
+
+            return customerData;
+        }
+
+        // Getting information and send them to desk Quote for calculation 
         //Area Cost
         public int getInput()
         {
+
             int inputwidth = Int32.Parse(InputWidth.Text);
             int inputDepth = Int32.Parse(InputDepth.Text);
+
             int areaCost = DeskQuote.areaCalc(inputwidth, inputDepth);
           
             return areaCost;
@@ -193,7 +212,6 @@ namespace MegaDesk_Echegaray
 
             return shippingMethod;
         }
-
 
         //Shipping Cost
         public int shippingDays_SelectedIndexChanged()
@@ -242,21 +260,15 @@ namespace MegaDesk_Echegaray
             }
             else
             {
-                //Display the the results and selected options in the display quote
-                string currentDateInfo = currentDate.Text;
-                string customerInfo = customerName.Text;
-                string areaTotal = Convert.ToString(getInput());
-                string drawerTotal = Convert.ToString(DrawersCalc());
-                string materialSelected = DesktopMaterial_SelectedIndexChanged();
-                string materialTotal = Convert.ToString(deskMaterial());
-                string shippingSelected = shippingDays_Selected();
-                string shippingTotal = Convert.ToString(shippingDays_SelectedIndexChanged());
-                string deskTotal = Convert.ToString(totalMath());
+                //Display the results and selected options in the display quote
 
-                DisplayQuote viewDisplayQuote = new DisplayQuote(currentDateInfo, customerInfo, areaTotal, drawerTotal, materialSelected, materialTotal, shippingSelected, shippingTotal, deskTotal);
+                DisplayQuote viewDisplayQuote = new DisplayQuote(DeskQuote);
                 viewDisplayQuote.Tag = this;
                 viewDisplayQuote.Show(this);
                 Hide();
+
+
+
 
             }
 
