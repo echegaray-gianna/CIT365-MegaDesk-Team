@@ -25,7 +25,6 @@ namespace MegaDesk_Echegaray
             viewAddQuote.Show(this);
             Hide();
 
-
         }
 
         private void btnViewQuotes_Click(object sender, EventArgs e)

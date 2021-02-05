@@ -33,7 +33,10 @@ namespace MegaDesk_Echegaray
         public void AddQuote_Load(object sender, EventArgs e)
         {
             currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
-           
+            shippingDays.SelectedIndex = 3;
+
+
+
         }
 
         // VALIDATION!!!
@@ -302,6 +305,17 @@ namespace MegaDesk_Echegaray
             viewMainMenu.Show();
             Close();
 
+        }
+
+        private void answer_Enter(object sender, EventArgs e)
+        {
+            NumericUpDown answerBox = sender as NumericUpDown;
+
+            if (answerBox != null)
+            {
+                int lengthOfAnswer = answerBox.Value.ToString().Length;
+                answerBox.Select(0, lengthOfAnswer);
+            }
         }
 
     }
