@@ -13,7 +13,7 @@ namespace MegaDesk_Echegaray
 {
     public partial class SearchQuotes : Form
     {
-        string listboxFormat = "{0,-15}\t{1,-20}\t{1,-20}\t{1,-20}\t{1,-20}";
+        string listboxFormat = "{0,-15}\t{1,-20}\t{2,-20}\t{3,-20}\t{4,-20}";
         public SearchQuotes()
         {
             InitializeComponent();
