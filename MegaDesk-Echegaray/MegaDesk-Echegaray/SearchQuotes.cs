@@ -98,8 +98,6 @@ namespace MegaDesk_Echegaray
                     searchedQuotes.Add(quote);
                 }
             }
-            Console.WriteLine(searchedQuotes.Count());
-            Console.WriteLine(searchedQuotes[0].customerInfo);
             
             foreach(DeskQuote quote in searchedQuotes)
             {
