@@ -16,6 +16,25 @@ namespace MegaDesk_Echegaray
 {
     public partial class DisplayQuote : Form
     {
+<<<<<<< Updated upstream
+=======
+        public DisplayQuote(string jsonData)
+        {
+            InitializeComponent();
+
+            Console.WriteLine(jsonData);
+            DeskQuote viewQuote = JsonConvert.DeserializeObject<DeskQuote>(jsonData);
+            Console.WriteLine(viewQuote.currentDate);
+            quoteDate.Text = viewQuote.currentDate;
+            custName.Text = viewQuote.customerInfo;
+            areaCost.Text = viewQuote.areaTotal;
+            drawerCost.Text = viewQuote.drawerTotal;
+            materialName.Text = viewQuote.materialSelected;
+            materialCost.Text = viewQuote.materialTotal;
+            shippingMethod.Text = viewQuote.shippingSelected;
+            shippingCost.Text = viewQuote.shippingTotal;
+            totalCost.Text = viewQuote.totalDesk;
+>>>>>>> Stashed changes
 
         AddQuote addQuote = new AddQuote();
 

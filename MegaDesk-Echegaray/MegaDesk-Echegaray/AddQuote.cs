@@ -264,8 +264,13 @@ namespace MegaDesk_Echegaray
                 dq.shippingTotal = shippingTotal;
                 dq.totalDesk = deskTotal;
 
+<<<<<<< Updated upstream
                 DeskQuote.dqList.Add(dq);
                 
+=======
+                string jsonData = JsonConvert.SerializeObject(newQuote, Formatting.Indented);
+                string path = @"../../quotes.json";
+>>>>>>> Stashed changes
 
                
 

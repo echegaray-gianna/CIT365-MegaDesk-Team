@@ -15,6 +15,8 @@ namespace MegaDesk_Echegaray
         public ViewAllQuotes()
         {
             InitializeComponent();
+            //dataGridDisplay.DataSource = DeskQuote.dqList;
+
         }
 
         private void btnViewAllQuotesClose_Click(object sender, EventArgs e)
