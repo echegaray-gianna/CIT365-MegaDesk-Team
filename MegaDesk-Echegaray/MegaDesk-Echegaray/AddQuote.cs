@@ -18,9 +18,9 @@ namespace MegaDesk_Echegaray
 {
     public partial class AddQuote : Form
     {
-        DeskQuote DeskQuote = new DeskQuote();
-        
-          
+        DeskQuote dq = new DeskQuote();
+
+
         public AddQuote()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace MegaDesk_Echegaray
         public void AddQuote_Load(object sender, EventArgs e)
         {
             currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
-           
+
         }
 
         // VALIDATION!!!
@@ -149,10 +149,10 @@ namespace MegaDesk_Echegaray
         {
             int inputwidth = Int32.Parse(InputWidth.Text);
             int inputDepth = Int32.Parse(InputDepth.Text);
-            int areaCost = DeskQuote.areaCalc(inputwidth, inputDepth);
-          
+            int areaCost = dq.areaCalc(inputwidth, inputDepth);
+
             return areaCost;
-            
+
         }
 
 
@@ -160,8 +160,8 @@ namespace MegaDesk_Echegaray
         public int DrawersCalc()
         {
             int drawers = Int32.Parse(DrawersNumber.Text);
-            int drawerCost = DeskQuote.drawersCalc(drawers);
-           
+            int drawerCost = dq.drawersCalc(drawers);
+
             return drawerCost;
         }
 
@@ -170,7 +170,7 @@ namespace MegaDesk_Echegaray
         public string DesktopMaterial_SelectedIndexChanged()
         {
             string materialName = DesktopMaterial.SelectedItem.ToString();
-            
+
             return materialName;
 
         }
@@ -181,7 +181,7 @@ namespace MegaDesk_Echegaray
         {
             string materialChosen = DesktopMaterial_SelectedIndexChanged();
             string material = materialChosen;
-            int materialPrice = DeskQuote.deskMaterialCalc(material);
+            int materialPrice = dq.deskMaterialCalc(material);
 
             return materialPrice;
         }
@@ -201,8 +201,8 @@ namespace MegaDesk_Echegaray
         {
             string RushDays = shippingDays.Text.ToString();
             int areaCost = getInput();
-            int shippingCost = DeskQuote.shippingCost(RushDays, areaCost);
-            
+            int shippingCost = dq.shippingCost(RushDays, areaCost);
+
             return shippingCost;
         }
 
@@ -223,8 +223,8 @@ namespace MegaDesk_Echegaray
             //price for Shipping
             int shippingCost = shippingDays_SelectedIndexChanged();
 
-            //Taking all the prices and send them to deskQuote to calculation
-            int totalCost = DeskQuote.totalCalc(areaCost, drawerCost, materialPrice, shippingCost);
+            //Taking all the prices and send them to dq to calculation
+            int totalCost = dq.totalCalc(areaCost, drawerCost, materialPrice, shippingCost);
 
             return totalCost;
         }
@@ -254,21 +254,25 @@ namespace MegaDesk_Echegaray
                 string shippingTotal = Convert.ToString(shippingDays_SelectedIndexChanged());
                 string deskTotal = Convert.ToString(totalMath());
 
-                DeskQuote newQuote = new DeskQuote(currentDateInfo, customerInfo, areaTotal, drawerTotal, materialSelected, materialTotal, shippingSelected,
-                    shippingTotal, deskTotal);
+                dq.currentDate = currentDateInfo;
+                dq.customerInfo = customerInfo;
+                dq.areaTotal = areaTotal;
+                dq.drawerTotal = drawerTotal;
+                dq.materialSelected = materialSelected;
+                dq.materialTotal = materialTotal;
+                dq.shippingSelected = shippingSelected;
+                dq.shippingTotal = shippingTotal;
+                dq.totalDesk = deskTotal;
 
-                string jsonData = JsonConvert.SerializeObject(newQuote, Formatting.Indented);
-                string path = @"C:\Users\Gianna\source\repos\CIT365-MegaDesk-Team\MegaDesk-Echegaray\MegaDesk-Echegaray\quotes.json";
+                DeskQuote.dqList.Add(dq);
 
-                if (jsonData != null && jsonData != "")
-                {
-                    File.AppendAllText(path, jsonData + Environment.NewLine);
-                }
-                else
-                {
-                    File.WriteAllText(path, jsonData);
-                }
-                DisplayQuote viewDisplayQuote = new DisplayQuote(jsonData);
+
+
+
+                File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(DeskQuote.dqList));
+
+
+                DisplayQuote viewDisplayQuote = new DisplayQuote(currentDateInfo, customerInfo, areaTotal, drawerTotal, materialSelected, materialTotal, shippingSelected, shippingTotal, deskTotal);
                 viewDisplayQuote.Tag = this;
                 viewDisplayQuote.Show(this);
                 Hide();
