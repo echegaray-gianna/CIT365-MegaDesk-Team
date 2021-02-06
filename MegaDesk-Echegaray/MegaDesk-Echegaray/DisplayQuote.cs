@@ -32,11 +32,11 @@ namespace MegaDesk_Echegaray
             shippingMethod.Text = viewQuote.shippingSelected;
             shippingCost.Text = viewQuote.shippingTotal;
             totalCost.Text = viewQuote.totalDesk;
-
-        DeskQuote DeskQuote = new DeskQuote();
+        }
+        //DeskQuote DeskQuote = new DeskQuote();
         
 
-        AddQuote addQuote = new AddQuote();
+        //AddQuote addQuote = new AddQuote();
         
       
         public string date { get; set; }
