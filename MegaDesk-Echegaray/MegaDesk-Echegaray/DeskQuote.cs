@@ -25,6 +25,7 @@ namespace MegaDesk_Echegaray
 
 
 
+
         // This is the List assigned to the Grid /////
         static public List<DeskQuote> dqList = new List<DeskQuote>();
 
@@ -34,7 +35,7 @@ namespace MegaDesk_Echegaray
         {
             try
             {
-                string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
+                string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
                 dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
                 Console.WriteLine(dqList[0].customerInfo);
             }
@@ -57,18 +58,12 @@ namespace MegaDesk_Echegaray
         //}
 
 
-        /////////////////////////////////////////////
-
-
-
-
-
         // Area Calculation 
         public int areaCalc(int width, int depth)
         {
 
             int area = width * depth;
-            
+
             if (area > 1000)
             {
                 int areaCost = 200 + (area - 1000);

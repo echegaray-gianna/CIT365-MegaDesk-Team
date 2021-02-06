@@ -151,6 +151,7 @@ namespace MegaDesk_Echegaray
             int inputwidth = Int32.Parse(InputWidth.Text);
             int inputDepth = Int32.Parse(InputDepth.Text);
             int areaCost = dq.areaCalc(inputwidth, inputDepth);
+
             return areaCost;
 
         }
@@ -161,6 +162,7 @@ namespace MegaDesk_Echegaray
         {
             int drawers = Int32.Parse(DrawersNumber.Text);
             int drawerCost = dq.drawersCalc(drawers);
+
             return drawerCost;
         }
 
@@ -201,6 +203,7 @@ namespace MegaDesk_Echegaray
             string RushDays = shippingDays.Text.ToString();
             int areaCost = getInput();
             int shippingCost = dq.shippingCost(RushDays, areaCost);
+
             return shippingCost;
         }
 
@@ -259,6 +262,7 @@ namespace MegaDesk_Echegaray
                 dq.materialSelected = materialSelected;
                 dq.materialTotal = materialTotal;
                 dq.shippingSelected = shippingSelected;
+
                 dq.shippingTotal = "$" + shippingTotal;
                 dq.totalDesk = "$" + deskTotal;
 
