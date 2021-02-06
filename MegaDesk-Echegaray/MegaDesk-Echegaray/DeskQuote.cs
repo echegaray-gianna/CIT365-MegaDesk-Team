@@ -9,8 +9,9 @@ using System.Windows.Forms;
 
 namespace MegaDesk_Echegaray
 {
-    class DeskQuote
+    public class DeskQuote
     {
+
         //this is used to create the JSON FILE 
         public string currentDate { get; set; }
         public string customerInfo { get; set; }
@@ -21,16 +22,18 @@ namespace MegaDesk_Echegaray
         public string shippingSelected { get; set; }
         public string shippingTotal { get; set; }
         public string totalDesk { get; set; }
-       
-        
+
+
+
+        // This is the List assigned to the Grid /////
         static public List<DeskQuote> dqList = new List<DeskQuote>();
-        Desk Desk = new Desk();
 
 
         // Populating the Grid /////
         static public void GetQueryList()
         {
-            try {
+            try
+            {
                 string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
                 dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
                 Console.WriteLine(dqList[0].customerInfo);
@@ -42,7 +45,20 @@ namespace MegaDesk_Echegaray
         }
 
 
+        // Diego's Code /////
+        //public List<DeskQuote>  GetQueryList() 
+        //{
+        //    string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
+
+
         /////////////////////////////////////////////
+
+        //    return quoteList;
+        //}
+
+
+        /////////////////////////////////////////////
+
 
 
 

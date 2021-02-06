@@ -14,13 +14,14 @@ using Newtonsoft.Json.Linq;
 
 
 
+
 namespace MegaDesk_Echegaray
 {
     public partial class AddQuote : Form
     {
         DeskQuote dq = new DeskQuote();
-        
-          
+
+
         public AddQuote()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace MegaDesk_Echegaray
         public void AddQuote_Load(object sender, EventArgs e)
         {
             currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
-           
+
         }
 
         // VALIDATION!!!
@@ -150,9 +151,8 @@ namespace MegaDesk_Echegaray
             int inputwidth = Int32.Parse(InputWidth.Text);
             int inputDepth = Int32.Parse(InputDepth.Text);
             int areaCost = dq.areaCalc(inputwidth, inputDepth);
-          
             return areaCost;
-            
+
         }
 
 
@@ -161,7 +161,6 @@ namespace MegaDesk_Echegaray
         {
             int drawers = Int32.Parse(DrawersNumber.Text);
             int drawerCost = dq.drawersCalc(drawers);
-           
             return drawerCost;
         }
 
@@ -170,7 +169,7 @@ namespace MegaDesk_Echegaray
         public string DesktopMaterial_SelectedIndexChanged()
         {
             string materialName = DesktopMaterial.SelectedItem.ToString();
-            
+
             return materialName;
 
         }
@@ -202,7 +201,6 @@ namespace MegaDesk_Echegaray
             string RushDays = shippingDays.Text.ToString();
             int areaCost = getInput();
             int shippingCost = dq.shippingCost(RushDays, areaCost);
-            
             return shippingCost;
         }
 
@@ -261,18 +259,13 @@ namespace MegaDesk_Echegaray
                 dq.materialSelected = materialSelected;
                 dq.materialTotal = materialTotal;
                 dq.shippingSelected = shippingSelected;
-                dq.shippingTotal = shippingTotal;
-                dq.totalDesk = deskTotal;
+                dq.shippingTotal = "$" + shippingTotal;
+                dq.totalDesk = "$" + deskTotal;
 
-<<<<<<< Updated upstream
                 DeskQuote.dqList.Add(dq);
-                
-=======
                 string jsonData = JsonConvert.SerializeObject(newQuote, Formatting.Indented);
                 string path = @"../../quotes.json";
->>>>>>> Stashed changes
 
-               
 
                 File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(DeskQuote.dqList));
 
@@ -293,6 +286,17 @@ namespace MegaDesk_Echegaray
             viewMainMenu.Show();
             Close();
 
+        }
+
+        private void answer_Enter(object sender, EventArgs e)
+        {
+            NumericUpDown answerBox = sender as NumericUpDown;
+
+            if (answerBox != null)
+            {
+                int lengthOfAnswer = answerBox.Value.ToString().Length;
+                answerBox.Select(0, lengthOfAnswer);
+            }
         }
 
     }
