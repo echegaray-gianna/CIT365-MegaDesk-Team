@@ -53,9 +53,10 @@ namespace MegaDesk_Echegaray
             // 
             // btnAddQuoteClose
             // 
-            this.btnAddQuoteClose.Location = new System.Drawing.Point(95, 512);
+            this.btnAddQuoteClose.Location = new System.Drawing.Point(320, 316);
+            this.btnAddQuoteClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddQuoteClose.Name = "btnAddQuoteClose";
-            this.btnAddQuoteClose.Size = new System.Drawing.Size(206, 47);
+            this.btnAddQuoteClose.Size = new System.Drawing.Size(137, 31);
             this.btnAddQuoteClose.TabIndex = 0;
             this.btnAddQuoteClose.Text = "Close";
             this.btnAddQuoteClose.UseVisualStyleBackColor = true;
@@ -63,9 +64,10 @@ namespace MegaDesk_Echegaray
             // 
             // btnAddQuoteSbt
             // 
-            this.btnAddQuoteSbt.Location = new System.Drawing.Point(440, 512);
+            this.btnAddQuoteSbt.Location = new System.Drawing.Point(148, 316);
+            this.btnAddQuoteSbt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddQuoteSbt.Name = "btnAddQuoteSbt";
-            this.btnAddQuoteSbt.Size = new System.Drawing.Size(206, 47);
+            this.btnAddQuoteSbt.Size = new System.Drawing.Size(137, 31);
             this.btnAddQuoteSbt.TabIndex = 1;
             this.btnAddQuoteSbt.Text = "Submit";
             this.btnAddQuoteSbt.UseVisualStyleBackColor = true;
@@ -74,43 +76,48 @@ namespace MegaDesk_Echegaray
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 98);
+            this.label1.Location = new System.Drawing.Point(44, 64);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 20);
+            this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Customer Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // customerName
             // 
-            this.customerName.Location = new System.Drawing.Point(222, 98);
+            this.customerName.Location = new System.Drawing.Point(148, 64);
+            this.customerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.customerName.Name = "customerName";
-            this.customerName.Size = new System.Drawing.Size(340, 26);
+            this.customerName.Size = new System.Drawing.Size(228, 20);
             this.customerName.TabIndex = 3;
             // 
             // InputWidth
             // 
-            this.InputWidth.Location = new System.Drawing.Point(222, 162);
+            this.InputWidth.Location = new System.Drawing.Point(148, 105);
+            this.InputWidth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.InputWidth.Name = "InputWidth";
-            this.InputWidth.Size = new System.Drawing.Size(113, 26);
+            this.InputWidth.Size = new System.Drawing.Size(77, 20);
             this.InputWidth.TabIndex = 5;
             this.InputWidth.Validating += new System.ComponentModel.CancelEventHandler(this.InputWidth_Validating);
             // 
             // dWidth
             // 
             this.dWidth.AutoSize = true;
-            this.dWidth.Location = new System.Drawing.Point(24, 168);
+            this.dWidth.Location = new System.Drawing.Point(16, 109);
+            this.dWidth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dWidth.Name = "dWidth";
-            this.dWidth.Size = new System.Drawing.Size(166, 20);
+            this.dWidth.Size = new System.Drawing.Size(113, 13);
             this.dWidth.TabIndex = 4;
             this.dWidth.Text = "Desk Width (24- 96 in)";
             this.dWidth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // InputDepth
             // 
-            this.InputDepth.Location = new System.Drawing.Point(222, 221);
+            this.InputDepth.Location = new System.Drawing.Point(148, 144);
+            this.InputDepth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.InputDepth.Name = "InputDepth";
-            this.InputDepth.Size = new System.Drawing.Size(113, 26);
+            this.InputDepth.Size = new System.Drawing.Size(77, 20);
             this.InputDepth.TabIndex = 7;
             this.InputDepth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputDepth_KeyPress);
             this.InputDepth.Validated += new System.EventHandler(this.InputDepth_Validated);
@@ -118,9 +125,10 @@ namespace MegaDesk_Echegaray
             // dDepth
             // 
             this.dDepth.AutoSize = true;
-            this.dDepth.Location = new System.Drawing.Point(12, 224);
+            this.dDepth.Location = new System.Drawing.Point(8, 146);
+            this.dDepth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dDepth.Name = "dDepth";
-            this.dDepth.Size = new System.Drawing.Size(173, 20);
+            this.dDepth.Size = new System.Drawing.Size(117, 13);
             this.dDepth.TabIndex = 6;
             this.dDepth.Text = "Desk Depth (12 - 48 in)";
             this.dDepth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,31 +136,35 @@ namespace MegaDesk_Echegaray
             // Drawers
             // 
             this.Drawers.AutoSize = true;
-            this.Drawers.Location = new System.Drawing.Point(66, 282);
+            this.Drawers.Location = new System.Drawing.Point(44, 183);
+            this.Drawers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Drawers.Name = "Drawers";
-            this.Drawers.Size = new System.Drawing.Size(68, 20);
+            this.Drawers.Size = new System.Drawing.Size(46, 13);
             this.Drawers.TabIndex = 8;
             this.Drawers.Text = "Drawers";
             this.Drawers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // DrawersNumber
             // 
-            this.DrawersNumber.Location = new System.Drawing.Point(222, 282);
+            this.DrawersNumber.Location = new System.Drawing.Point(148, 183);
+            this.DrawersNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DrawersNumber.Maximum = new decimal(new int[] {
             7,
             0,
             0,
             0});
             this.DrawersNumber.Name = "DrawersNumber";
-            this.DrawersNumber.Size = new System.Drawing.Size(113, 26);
+            this.DrawersNumber.Size = new System.Drawing.Size(75, 20);
             this.DrawersNumber.TabIndex = 9;
+            this.DrawersNumber.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // dMaterial
             // 
             this.dMaterial.AutoSize = true;
-            this.dMaterial.Location = new System.Drawing.Point(66, 349);
+            this.dMaterial.Location = new System.Drawing.Point(44, 227);
+            this.dMaterial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dMaterial.Name = "dMaterial";
-            this.dMaterial.Size = new System.Drawing.Size(65, 20);
+            this.dMaterial.Size = new System.Drawing.Size(44, 13);
             this.dMaterial.TabIndex = 10;
             this.dMaterial.Text = "Material";
             this.dMaterial.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -167,17 +179,19 @@ namespace MegaDesk_Echegaray
             // 
             this.DesktopMaterial.AllowDrop = true;
             this.DesktopMaterial.FormattingEnabled = true;
-            this.DesktopMaterial.Location = new System.Drawing.Point(222, 349);
+            this.DesktopMaterial.Location = new System.Drawing.Point(148, 227);
+            this.DesktopMaterial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DesktopMaterial.Name = "DesktopMaterial";
-            this.DesktopMaterial.Size = new System.Drawing.Size(189, 28);
+            this.DesktopMaterial.Size = new System.Drawing.Size(127, 21);
             this.DesktopMaterial.TabIndex = 13;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 421);
+            this.label2.Location = new System.Drawing.Point(44, 274);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 40);
+            this.label2.Size = new System.Drawing.Size(64, 26);
             this.label2.TabIndex = 14;
             this.label2.Text = "Rush Order \r\nOptions";
             // 
@@ -189,34 +203,37 @@ namespace MegaDesk_Echegaray
             "5",
             "7",
             "14"});
-            this.shippingDays.Location = new System.Drawing.Point(222, 421);
+            this.shippingDays.Location = new System.Drawing.Point(148, 274);
+            this.shippingDays.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.shippingDays.Name = "shippingDays";
-            this.shippingDays.Size = new System.Drawing.Size(198, 28);
+            this.shippingDays.Size = new System.Drawing.Size(133, 21);
             this.shippingDays.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(426, 424);
+            this.label3.Location = new System.Drawing.Point(284, 276);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 20);
+            this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 16;
             this.label3.Text = "Days";
             // 
             // currentDate
             // 
             this.currentDate.AutoSize = true;
-            this.currentDate.Location = new System.Drawing.Point(284, 37);
+            this.currentDate.Location = new System.Drawing.Point(189, 24);
+            this.currentDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.currentDate.Name = "currentDate";
-            this.currentDate.Size = new System.Drawing.Size(62, 30);
+            this.currentDate.Size = new System.Drawing.Size(159, 13);
             this.currentDate.TabIndex = 17;
-            this.currentDate.Text = "date";
+            this.currentDate.Text = "Please complete the blank fields";
             // 
             // AddQuote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 593);
+            this.ClientSize = new System.Drawing.Size(533, 385);
             this.Controls.Add(this.currentDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.shippingDays);
@@ -233,6 +250,7 @@ namespace MegaDesk_Echegaray
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddQuoteSbt);
             this.Controls.Add(this.btnAddQuoteClose);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddQuote";
             this.Text = "AddQuote";
             this.Load += new System.EventHandler(this.AddQuote_Load);

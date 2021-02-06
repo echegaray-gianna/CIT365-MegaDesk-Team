@@ -14,6 +14,7 @@ using Newtonsoft.Json.Linq;
 
 
 
+
 namespace MegaDesk_Echegaray
 {
     public partial class AddQuote : Form
@@ -261,12 +262,13 @@ namespace MegaDesk_Echegaray
                 dq.materialSelected = materialSelected;
                 dq.materialTotal = materialTotal;
                 dq.shippingSelected = shippingSelected;
-                dq.shippingTotal = shippingTotal;
-                dq.totalDesk = deskTotal;
+
+                dq.shippingTotal = "$" + shippingTotal;
+                dq.totalDesk = "$" + deskTotal;
 
                 DeskQuote.dqList.Add(dq);
-
-
+                string jsonData = JsonConvert.SerializeObject(DeskQuote.dqList, Formatting.Indented);
+                string path = @"../../quotes.json";
 
 
                 File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(DeskQuote.dqList));
@@ -288,6 +290,17 @@ namespace MegaDesk_Echegaray
             viewMainMenu.Show();
             Close();
 
+        }
+
+        private void answer_Enter(object sender, EventArgs e)
+        {
+            NumericUpDown answerBox = sender as NumericUpDown;
+
+            if (answerBox != null)
+            {
+                int lengthOfAnswer = answerBox.Value.ToString().Length;
+                answerBox.Select(0, lengthOfAnswer);
+            }
         }
 
     }
