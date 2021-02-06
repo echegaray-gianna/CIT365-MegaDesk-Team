@@ -268,10 +268,9 @@ namespace MegaDesk_Echegaray
 
                 DeskQuote.dqList.Add(dq);
                 string jsonData = JsonConvert.SerializeObject(DeskQuote.dqList, Formatting.Indented);
-                string path = @"../../quotes.json";
 
 
-                File.WriteAllText("quotes.json", JsonConvert.SerializeObject(DeskQuote.dqList));
+                File.WriteAllText("../../quotes.json", JsonConvert.SerializeObject(DeskQuote.dqList));
 
 
                 DisplayQuote viewDisplayQuote = new DisplayQuote(currentDateInfo, customerInfo, areaTotal, drawerTotal, materialSelected, materialTotal, shippingSelected, shippingTotal, deskTotal);

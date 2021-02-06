@@ -35,7 +35,7 @@ namespace MegaDesk_Echegaray
         {
             try
             {
-                string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
+                string json = File.ReadAllText("../../quotes.json", System.Text.Encoding.UTF8);
                 dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
                 Console.WriteLine(dqList[0].customerInfo);
             }
@@ -114,7 +114,6 @@ namespace MegaDesk_Echegaray
             System.IO.StreamReader file = new System.IO.StreamReader(@"../../rushOrderPrices.txt");
             while ((line = file.ReadLine()) != null)
             {
-                System.Console.WriteLine(line);
                 rushPrices.Add(Convert.ToInt32(line));
             }
             Console.WriteLine(rushPrices);
