@@ -20,6 +20,7 @@ namespace MegaDesk_Echegaray
             InitializeComponent();
             DeskQuote.GetQueryList();
             CreateHeadRowSearchListBox();
+            materialComboBox.DataSource = Enum.GetValues(typeof(DesktopMaterialList));
         }
         void CreateHeadRowSearchListBox()
         {
@@ -78,10 +79,15 @@ namespace MegaDesk_Echegaray
             }
             return result;
         }
+        private string materialComboBox_SelectedIndexChanged()
+        {
+            string materialName = materialComboBox.SelectedItem.ToString();
 
+            return materialName;
+        }
         private void searchButton_Click(object sender, EventArgs e)
         {
-            string material = materialComboBox.Items.ToString();
+            string material = materialComboBox_SelectedIndexChanged();
             foreach(DeskQuote quote in DeskQuote.dqList)
             {
                 if(quote.materialSelected.Equals(material))
@@ -96,5 +102,7 @@ namespace MegaDesk_Echegaray
                 searchListBox.Items.Add(string.Format(listboxFormat,quote.customerInfo,quote.currentDate,area,drawerCount,quote.totalDesk));
             }
         }
+
+        
     }
 }
