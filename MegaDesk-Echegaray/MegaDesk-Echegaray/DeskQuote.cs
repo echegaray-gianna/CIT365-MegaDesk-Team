@@ -9,8 +9,9 @@ using System.Windows.Forms;
 
 namespace MegaDesk_Echegaray
 {
-    class DeskQuote
+    public class DeskQuote
     {
+
         //this is used to create the JSON FILE 
         public string currentDate { get; set; }
         public string customerInfo { get; set; }
@@ -21,30 +22,40 @@ namespace MegaDesk_Echegaray
         public string shippingSelected { get; set; }
         public string shippingTotal { get; set; }
         public string totalDesk { get; set; }
-       
-        
+
+
+
+
+        // This is the List assigned to the Grid /////
         static public List<DeskQuote> dqList = new List<DeskQuote>();
-        Desk Desk = new Desk();
 
 
         // Populating the Grid /////
         static public void GetQueryList()
         {
-            try {
-                string json = File.ReadAllText("myobjects.json", System.Text.Encoding.UTF8);
+            try
+            {
+                string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
                 dqList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
                 Console.WriteLine(dqList[0].customerInfo);
             }
             catch (FileNotFoundException e)
             {
-                MessageBox.Show("No file found");
+                Console.WriteLine("No preexisting file.");
             }
         }
 
 
+        // Diego's Code /////
+        //public List<DeskQuote>  GetQueryList() 
+        //{
+        //    string json = File.ReadAllText("quotes.json", System.Text.Encoding.UTF8);
+
+
         /////////////////////////////////////////////
 
-
+        //    return quoteList;
+        //}
 
 
         // Area Calculation 
@@ -52,7 +63,7 @@ namespace MegaDesk_Echegaray
         {
 
             int area = width * depth;
-            
+
             if (area > 1000)
             {
                 int areaCost = 200 + (area - 1000);

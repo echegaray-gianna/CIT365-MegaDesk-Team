@@ -15,6 +15,8 @@ namespace MegaDesk_Echegaray
         public ViewAllQuotes()
         {
             InitializeComponent();
+            dataGridDisplay.DataSource = DeskQuote.dqList;
+
         }
 
         private void btnViewAllQuotesClose_Click(object sender, EventArgs e)
@@ -22,6 +24,16 @@ namespace MegaDesk_Echegaray
             MainMenu viewMainMenu = (MainMenu)Tag;
             viewMainMenu.Show();
             Close();
+        }
+
+        // Diego's code 
+        private void ViewAllQuotes_Load(object sender, EventArgs e)
+       {
+            // Loads the grid display containing the added quotes
+
+        //    DeskQuote u = new DeskQuote();
+
+
         }
     }
 }
