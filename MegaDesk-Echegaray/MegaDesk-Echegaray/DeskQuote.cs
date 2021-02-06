@@ -40,7 +40,7 @@ namespace MegaDesk_Echegaray
             }
             catch (FileNotFoundException e)
             {
-                MessageBox.Show("No file found");
+                Console.WriteLine("No preexisting file.");
             }
         }
 

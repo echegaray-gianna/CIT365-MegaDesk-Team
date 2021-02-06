@@ -263,8 +263,8 @@ namespace MegaDesk_Echegaray
                 dq.totalDesk = "$" + deskTotal;
 
                 DeskQuote.dqList.Add(dq);
-
-
+                string jsonData = JsonConvert.SerializeObject(newQuote, Formatting.Indented);
+                string path = @"../../quotes.json";
 
 
                 File.WriteAllText("myobjects.json", JsonConvert.SerializeObject(DeskQuote.dqList));

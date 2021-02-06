@@ -1,0 +1,131 @@
+ {
+    "currentDate": "02 February 2021",
+    "customerInfo": "Gianna",
+    "areaTotal": "200",
+    "drawerTotal": "50",
+    "materialSelected": "Pine",
+    "materialTotal": "50",
+    "shippingSelected": "5",
+    "shippingTotal": "50",
+    "totalDesk": "350"
+  }{
+    "currentDate": "02 February 2021",
+    "customerInfo": "Jose",
+    "areaTotal": "200",
+    "drawerTotal": "100",
+    "materialSelected": "Pine",
+    "materialTotal": "50",
+    "shippingSelected": "7",
+    "shippingTotal": "35",
+    "totalDesk": "385"
+  }{
+    "currentDate": "02 February 2021",
+    "customerInfo": "Pedro",
+    "areaTotal": "200",
+    "drawerTotal": "250",
+    "materialSelected": "Pine",
+    "materialTotal": "50",
+    "shippingSelected": "5",
+    "shippingTotal": "50",
+    "totalDesk": "550"
+ }
+
+{
+  "currentDate": "05 February 2021",
+  "customerInfo": "eth",
+  "areaTotal": "1225",
+  "drawerTotal": "0",
+  "materialSelected": "Pine",
+  "materialTotal": "50",
+  "shippingSelected": "7",
+  "shippingTotal": "40",
+  "totalDesk": "1315"
+}
+{
+  "currentDate": "05 February 2021",
+  "customerInfo": "eth",
+  "areaTotal": "1225",
+  "drawerTotal": "0",
+  "materialSelected": "Pine",
+  "materialTotal": "50",
+  "shippingSelected": "7",
+  "shippingTotal": "40",
+  "totalDesk": "1315"
+}
+{
+  "currentDate": "05 February 2021",
+  "customerInfo": "eth",
+  "areaTotal": "1225",
+  "drawerTotal": "0",
+  "materialSelected": "Pine",
+  "materialTotal": "50",
+  "shippingSelected": "7",
+  "shippingTotal": "40",
+  "totalDesk": "1315"
+}
+{
+  "currentDate": "05 February 2021",
+  "customerInfo": "eth",
+  "areaTotal": "1225",
+  "drawerTotal": "0",
+  "materialSelected": "Pine",
+  "materialTotal": "50",
+  "shippingSelected": "3",
+  "shippingTotal": "80",
+  "totalDesk": "1355"
+}
+{
+  "currentDate": "05 February 2021",
+  "customerInfo": "eth",
+  "areaTotal": "1225",
+  "drawerTotal": "0",
+  "materialSelected": "Pine",
+  "materialTotal": "50",
+  "shippingSelected": "7",
+  "shippingTotal": "40",
+  "totalDesk": "1315"
+}
+{
+  "currentDate": "05 February 2021",
+  "customerInfo": "eth",
+  "areaTotal": "1225",
+  "drawerTotal": "0",
+  "materialSelected": "Pine",
+  "materialTotal": "50",
+  "shippingSelected": "7",
+  "shippingTotal": "40",
+  "totalDesk": "1315"
+}
+{
+  "currentDate": "05 February 2021",
+  "customerInfo": "Mr. Bonko Man",
+  "areaTotal": "200",
+  "drawerTotal": "350",
+  "materialSelected": "Rosewood",
+  "materialTotal": "300",
+  "shippingSelected": "3",
+  "shippingTotal": "70",
+  "totalDesk": "920"
+}
+{
+  "currentDate": "05 February 2021",
+  "customerInfo": "eth",
+  "areaTotal": "1225",
+  "drawerTotal": "0",
+  "materialSelected": "Pine",
+  "materialTotal": "50",
+  "shippingSelected": "3",
+  "shippingTotal": "80",
+  "totalDesk": "1355"
+}
+{
+  "currentDate": "05 February 2021",
+  "customerInfo": "James",
+  "areaTotal": "1225",
+  "drawerTotal": "0",
+  "materialSelected": "Pine",
+  "materialTotal": "50",
+  "shippingSelected": "5",
+  "shippingTotal": "60",
+  "totalDesk": "1335"
+}
