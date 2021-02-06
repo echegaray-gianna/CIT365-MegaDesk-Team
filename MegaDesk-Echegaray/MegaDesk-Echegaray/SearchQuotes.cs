@@ -13,7 +13,7 @@ namespace MegaDesk_Echegaray
 {
     public partial class SearchQuotes : Form
     {
-        string listboxFormat = "{0,-15}\t{1,-20}\t{2,-20}\t{3,-20}\t{4,-20}\t{5,-20}";
+        string listboxFormat = "{0,-10}\t{1,-15}\t{2,-20}\t{3,-20}\t{4,-10}\t{5,-5}";
         List<DeskQuote> searchedQuotes = new List<DeskQuote>();
         public SearchQuotes()
         {
@@ -87,6 +87,9 @@ namespace MegaDesk_Echegaray
         }
         private void searchButton_Click(object sender, EventArgs e)
         {
+            searchListBox.Items.Clear();
+            searchListBox.Items.Add(string.Format(listboxFormat, "Material", "Cusotmer Name", "Quote Date", "Desk Area", "Desk Drawers", "Price"));
+            searchedQuotes.Clear();
             string material = materialComboBox_SelectedIndexChanged();
             foreach(DeskQuote quote in DeskQuote.dqList)
             {
@@ -95,12 +98,16 @@ namespace MegaDesk_Echegaray
                     searchedQuotes.Add(quote);
                 }
             }
+            Console.WriteLine(searchedQuotes.Count());
+            Console.WriteLine(searchedQuotes[0].customerInfo);
+            
             foreach(DeskQuote quote in searchedQuotes)
             {
                 string area = GetDeskAreaFromAreaTotal(quote.areaTotal);
                 string drawerCount = GetDeskDrawerFromDrawerTotal(quote.drawerTotal);
-                searchListBox.Items.Add(string.Format(listboxFormat,quote.customerInfo,quote.currentDate,area,drawerCount,quote.totalDesk));
+                searchListBox.Items.Add(string.Format(listboxFormat,quote.materialSelected,quote.customerInfo,quote.currentDate,area,drawerCount,quote.totalDesk));
             }
+            
         }
 
         
