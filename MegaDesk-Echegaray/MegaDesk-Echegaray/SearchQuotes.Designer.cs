@@ -63,7 +63,7 @@ namespace MegaDesk_Echegaray
             this.materialComboBox.Name = "materialComboBox";
             this.materialComboBox.Size = new System.Drawing.Size(121, 21);
             this.materialComboBox.TabIndex = 2;
-            this.materialComboBox.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_SelectedIndexChanged);
+            
             // 
             // searchListBox
             // 
