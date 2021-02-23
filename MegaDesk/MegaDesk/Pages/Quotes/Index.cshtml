@@ -1,0 +1,58 @@
+﻿@page
+@model MegaDesk.Pages.Quotes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Add New Quote</a>
+</p>
+
+<form>
+    <p class="form_search">
+        Search by:
+        <select asp-for="SearchSelection" name="searchSelection">
+            <option value="">All</option>
+            <option value="CustomerName">Customer Name</option>
+        </select>
+        <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" class="filter_btn" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort" class="short_info">
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].Date)
+                </a>
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CustomerNameSort" class="short_info">
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+                </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.DeskQuote) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
