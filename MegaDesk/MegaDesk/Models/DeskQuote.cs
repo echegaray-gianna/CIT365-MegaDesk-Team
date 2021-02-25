@@ -48,6 +48,7 @@ namespace MegaDesk.Models
 
         //desk cost
         public decimal Cost { get; set; }
+<<<<<<< Updated upstream
         
         // Area Calculation 
         public decimal areaCalc() {
@@ -57,18 +58,44 @@ namespace MegaDesk.Models
                 return areaCost;
             }
             else {
+=======
+
+        // Area Calculation 
+        public decimal areaCalc()
+        {
+            Area = Width * Deep;
+            if (Area > 1000)
+            {
+                decimal areaCost = 200 + (Area - 1000);
+                return areaCost;
+            }
+            else
+            {
+>>>>>>> Stashed changes
                 return 200;
             }
         }
 
         //Drawer Calculation
+<<<<<<< Updated upstream
         public int drawersCalc() {
+=======
+        public int drawersCalc()
+        {
+>>>>>>> Stashed changes
             int totalDrawers = Drawers * 50;
             return totalDrawers;
         }
 
+<<<<<<< Updated upstream
         public int deskMaterialCalc() {
             switch (Material) {
+=======
+        public int deskMaterialCalc()
+        {
+            switch (Material)
+            {
+>>>>>>> Stashed changes
                 case "Oak":
                     return 200;
                 case "Laminate":
@@ -84,9 +111,16 @@ namespace MegaDesk.Models
             }
         }
 
+<<<<<<< Updated upstream
         public decimal shippingCostCalc() {
             decimal areaDesk = (Area - 200) + 1000;
             int[] rushPrices = {60,70,80, 40,50,60, 30,35,40};
+=======
+        public decimal shippingCostCalc()
+        {
+            decimal areaDesk = (Area - 200) + 1000;
+            int[] rushPrices = { 60, 70, 80, 40, 50, 60, 30, 35, 40 };
+>>>>>>> Stashed changes
             switch (Shipping)
             {
                 case 3:
@@ -100,6 +134,7 @@ namespace MegaDesk.Models
                     else if (areaDesk >= 1000 && areaDesk <= 2000) { return rushPrices[4]; }
                     else if (areaDesk > 2000) { return rushPrices[5]; }
                     else { return 0; }
+<<<<<<< Updated upstream
 
                 case 7:
                     if (areaDesk < 1000) { return rushPrices[6]; }
@@ -122,3 +157,30 @@ namespace MegaDesk.Models
         }
     }
 }
+=======
+
+                case 7:
+                    if (areaDesk < 1000) { return rushPrices[6]; }
+                    else if (areaDesk >= 1000 && areaDesk <= 2000) { return rushPrices[7]; }
+                    else if (areaDesk > 2000) { return rushPrices[8]; }
+                    else { return 0; }
+
+                case 14:
+                    return 0;
+
+                default:
+                    return 0;
+            }
+        }
+        //Total Cost Calculation
+        public void totalCalc()
+        {
+
+            Cost = areaCalc() + drawersCalc() + deskMaterialCalc() + shippingCostCalc();
+
+        }
+    }
+    
+
+}
+>>>>>>> Stashed changes
