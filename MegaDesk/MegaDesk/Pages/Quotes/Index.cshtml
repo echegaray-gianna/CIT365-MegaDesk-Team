@@ -35,17 +35,34 @@
                     @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
                 </a>
             </th>
+            <th>
+                <a class="short_info">
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].Cost)
+                </a>
+            </th>
+            <th>
+                <a class="short_info">
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].Area)
+                </a>
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.DeskQuote) {
+    item.totalCalc();
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area) sq in
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
