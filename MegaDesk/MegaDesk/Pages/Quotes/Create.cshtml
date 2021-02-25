@@ -41,27 +41,27 @@
             <div class="form-group">
                 <label asp-for="DeskQuote.Material" class="control-label"></label>
                 <br />
+                <div class="form-group-radio">
+                    <input type="radio" asp-for="DeskQuote.Material" value="Oak" />
+                    <label asp-for="DeskQuote.Material">Oak</label>
+                    <img class="img_surface" src="~/img/oak.jpg" />
 
-                <input type="radio" asp-for="DeskQuote.Material" value="Oak" />
-                <label asp-for="DeskQuote.Material">Oak</label>
-                <img class="img_surface" src="~/img/oak.jpg" />
+                    <input type="radio" asp-for="DeskQuote.Material" value="Laminate" />
+                    <label asp-for="DeskQuote.Material">Laminate</label>
+                    <img class="img_surface" src="~/img/laminate.jpg" />
 
-                <input type="radio" asp-for="DeskQuote.Material" value="Laminate" />
-                <label asp-for="DeskQuote.Material">Laminate</label>
-                <img class="img_surface" src="~/img/laminate.jpg" />
+                    <input type="radio" asp-for="DeskQuote.Material" value="Pine" />
+                    <label asp-for="DeskQuote.Material">Pine</label>
+                    <img class="img_surface" src="~/img/pine.jpg" />
 
-                <input type="radio" asp-for="DeskQuote.Material" value="Pine" />
-                <label asp-for="DeskQuote.Material">Pine</label>
-                <img class="img_surface" src="~/img/pine.jpg" />
+                    <input type="radio" asp-for="DeskQuote.Material" value="Rosewood" />
+                    <label asp-for="DeskQuote.Material">Rosewood</label>
+                    <img class="img_surface" src="~/img/rosewood.jpg" />
 
-                <input type="radio" asp-for="DeskQuote.Material" value="Rosewood" />
-                <label asp-for="DeskQuote.Material">Rosewood</label>
-                <img class="img_surface" src="~/img/rosewood.jpg" />
-
-                <input type="radio" asp-for="DeskQuote.Material" value="Veneer" />
-                <label asp-for="DeskQuote.Material">Veneer</label>
-                <img class="img_surface" src="~/img/veneer.jpg" />
-
+                    <input type="radio" asp-for="DeskQuote.Material" value="Veneer" />
+                    <label asp-for="DeskQuote.Material">Veneer</label>
+                    <img class="img_surface" src="~/img/veneer.jpg" />
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Shipping" class="control-label"></label>
@@ -75,14 +75,14 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group-submit">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div class="back-link">
     <a asp-page="Index">Back to List</a>
 </div>
 

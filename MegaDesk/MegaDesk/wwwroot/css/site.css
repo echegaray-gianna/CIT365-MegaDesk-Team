@@ -5,6 +5,10 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  /*change size and weight: Kisuk 
+  -------------------------------------------------*/
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 /* Provide sufficient contrast against white background */
@@ -24,6 +28,63 @@ a {
   border-color: #1861ac;
 }
 
+.nav-link:hover{
+    background: #aaa;
+    color: #fff;
+}
+/* Kisuk Work
+--------------------------------------------------*/
+body {
+    background: url(../img/background_office.jpg) no-repeat;
+}
+.container {
+    background: rgba(246,246,246,0.75);
+}
+.pb-3 {
+    overflow: hidden;
+}
+.pb-3 > p {
+    display: inline;
+    float: left;
+    min-width: 200px;
+}
+.img_surface{
+    width: 40%;
+}
+
+.form-group{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.form-group-radio {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 10px;
+}
+.form-group-radio > img:hover {
+    transform: scale(5);
+    z-index: 10;
+}
+.col-md-4 {
+    margin: 0 auto;
+}
+.form-group-submit > input[type=submit]{
+    min-width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+.row {
+    width: 80%;
+    background: rgba(230,230,230,0.75);
+    padding: 10px;
+    margin: 0 auto;
+}
+.sub-title {
+    color: #1B6EC2;
+}
+.warning { 
+    color: #C21B1B;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -34,7 +95,6 @@ html {
     font-size: 16px;
   }
 }
-
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
