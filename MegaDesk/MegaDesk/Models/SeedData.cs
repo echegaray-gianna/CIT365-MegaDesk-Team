@@ -32,7 +32,9 @@ namespace MegaDesk.Models
                         Deep = 44.20M,
                         Drawers = 3,
                         Material = "Oak",
-                        Shipping = 7
+                        Shipping = 7,
+                        Cost = 380.00M,
+                        Area = 757.17M
                     },
 
                     new DeskQuote
@@ -43,7 +45,9 @@ namespace MegaDesk.Models
                         Deep = 25.60M,
                         Drawers = 4,
                         Material = "Pine",
-                        Shipping = 5
+                        Shipping = 5,
+                        Cost = 290.00M,
+                        Area = 359.68M
                     },
 
                     new DeskQuote
@@ -54,7 +58,9 @@ namespace MegaDesk.Models
                         Deep = 15.37M,
                         Drawers = 6,
                         Material = "Rosewood",
-                        Shipping = 3
+                        Shipping = 3,
+                        Cost = 660.00M,
+                        Area = 200.00M
                     },
 
                     new DeskQuote
@@ -65,7 +71,9 @@ namespace MegaDesk.Models
                         Deep = 40.11M,
                         Drawers = 7,
                         Material = "Veneer",
-                        Shipping = 14
+                        Shipping = 14,
+                        Cost = 475.00M,
+                        Area = 345.14M
                     },
 
                     new DeskQuote
@@ -76,7 +84,9 @@ namespace MegaDesk.Models
                         Deep = 33.87M,
                         Drawers = 2,
                         Material = "Oak",
-                        Shipping = 5
+                        Shipping = 5,
+                        Cost = 340.00M,
+                        Area = 2255.41M
                     }
 
 

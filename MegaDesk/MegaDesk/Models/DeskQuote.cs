@@ -64,6 +64,11 @@ namespace MegaDesk.Models
                 return 200;
             }
         }
+        public decimal surfaceCalc()
+        {
+            Area = Width * Deep;
+            return Area;
+        }
 
         //Drawer Calculation
         public int drawersCalc()
@@ -121,10 +126,9 @@ namespace MegaDesk.Models
                     return 0;
             }
         }        
-        public void totalCalc()
+        public decimal totalCalc()
         {
-            Area = areaCalc();
-            Cost = Area + drawersCalc() + deskMaterialCalc() + shippingCostCalc();
+            return Area + drawersCalc() + deskMaterialCalc() + shippingCostCalc();
         }
     }
 }

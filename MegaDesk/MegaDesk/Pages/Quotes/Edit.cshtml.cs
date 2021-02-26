@@ -52,6 +52,8 @@ namespace MegaDesk.Pages.Quotes
 
             try
             {
+                DeskQuote.Area = DeskQuote.surfaceCalc();
+                DeskQuote.Cost = DeskQuote.totalCalc();
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)

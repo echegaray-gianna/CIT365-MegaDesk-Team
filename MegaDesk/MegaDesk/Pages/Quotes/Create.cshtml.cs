@@ -36,6 +36,8 @@ namespace MegaDesk.Pages.Quotes
             }
 
             _context.DeskQuote.Add(DeskQuote);
+            this.DeskQuote.Area = DeskQuote.areaCalc();
+            this.DeskQuote.Cost = DeskQuote.totalCalc();
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

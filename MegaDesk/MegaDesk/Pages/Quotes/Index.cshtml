@@ -50,7 +50,8 @@
     </thead>
     <tbody>
 @foreach (var item in Model.DeskQuote) {
-    item.totalCalc();
+    //item.Cost = item.totalCalc();
+    //item.Area = item.areaCalc();
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
