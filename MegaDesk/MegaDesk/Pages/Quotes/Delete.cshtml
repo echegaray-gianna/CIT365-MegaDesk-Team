@@ -54,6 +54,18 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DeskQuote.Shipping)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskQuote.Area)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.Area) sq ft
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskQuote.Cost)
+        </dt>
+        <dd class="col-sm-10">
+            $@Html.DisplayFor(model => model.DeskQuote.Cost)
+        </dd>
     </dl>
 
     <form method="post">
