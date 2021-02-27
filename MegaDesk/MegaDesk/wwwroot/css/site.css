@@ -7,7 +7,7 @@ a.navbar-brand {
   word-break: break-all;
   /*change size and weight: Kisuk 
   -------------------------------------------------*/
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
@@ -38,13 +38,15 @@ a {
 /* ////////////// OUR CSS  //////////*/
 /*///////////////////////////////////*/
 
-
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Sans+JP:wght@300&display=swap');
 body {
     background: url(../img/background_office.jpg) no-repeat;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .title_page {
     margin-bottom: 3%;
+    margin-top: 2%;
 }
 
 .table{
@@ -181,6 +183,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  font
 }
 
 .footer {
