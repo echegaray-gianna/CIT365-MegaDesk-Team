@@ -52,7 +52,7 @@ namespace SMPlanner.Controllers
                     break;
             }
 
-            return View(await _context.AssignmentTopics.ToListAsync());
+            return View(meeting);
         }
 
         // GET: AssignmentTopics/Details/5
