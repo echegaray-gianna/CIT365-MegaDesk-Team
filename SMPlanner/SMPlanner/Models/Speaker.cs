@@ -18,7 +18,7 @@ namespace SMPlanner.Models
         [Required(ErrorMessage = "Please enter the Speaker Name.")]
         public string Name { get; set; }
 
-
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Please a assign a meeting to the speaker. If the meeting is not in the list, add it first from the meeting planner tab ")]
         public Meeting Meeting { get; set; }
 
