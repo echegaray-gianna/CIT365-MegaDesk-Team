@@ -71,5 +71,6 @@ namespace SMPlanner.Models
 
         public ICollection<Speaker> Speakers { get; set; }
 
+ 
     }
 }
