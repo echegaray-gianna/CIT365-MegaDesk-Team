@@ -16,14 +16,14 @@
             
             <div class="form-group">
                 <label asp-for="Meeting.MeetingDate" class="control-label"></label>
-                <select asp-for="Meeting.MeetingDate" class="form-control" asp-items="ViewBag.MeetingID"></select>
+                <select asp-for="MeetingID" class="form-control" asp-items="ViewBag.MeetingID"></select>
                 <span asp-validation-for="Meeting.MeetingDate" class="text-danger" ></span>
             </div>
             
             <div class="form-group">
-                <label asp-for="AssignmentTopic.Topic" class="control-label"></label>
-                <select asp-for="AssignmentTopic.Topic" class="form-control" asp-items="ViewBag.AssignmentTopicID"></select>
-                <span asp-validation-for="AssignmentTopic.Topic" class="text-danger"></span>
+                <label asp-for="AssignmentTopic" class="control-label"></label>
+                <select asp-for="AssignmentTopicID" class="form-control" asp-items="ViewBag.AssignmentTopicID"></select>
+                <span asp-validation-for="AssignmentTopic.ID" class="text-danger"></span>
             </div>
             
             <div class="form-group">

@@ -94,6 +94,7 @@ namespace SMPlanner.Controllers
         {
             ViewData["AssignmentTopicID"] = new SelectList(_context.AssignmentTopics, "ID", "Topic");
             ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "MeetingDate");
+
             return View();
         }
 
@@ -130,6 +131,7 @@ namespace SMPlanner.Controllers
             }
             ViewData["AssignmentTopicID"] = new SelectList(_context.AssignmentTopics, "ID", "Topic", speaker.AssignmentTopicID);
             ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "MeetingDate", speaker.MeetingID);
+           
             return View(speaker);
         }
 
@@ -167,9 +169,16 @@ namespace SMPlanner.Controllers
             }
             ViewData["AssignmentTopicID"] = new SelectList(_context.AssignmentTopics, "ID", "Topic", speaker.AssignmentTopicID);
             ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "MeetingDate", speaker.MeetingID);
+           
             return View(speaker);
         }
-
+        //private void MeetingDropDownList(object selectedMeeting = null)
+        //{
+        //    var meetingQuery = from m in _context.Meetings
+        //                           orderby m.MeetingDate
+        //                           select m;
+        //    ViewBag.MeetingID = new SelectList(meetingQuery.AsNoTracking(), "DepartmentID", "Name", selectedMeeting);
+        //}
         // GET: Speakers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

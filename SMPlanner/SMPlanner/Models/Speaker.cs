@@ -11,8 +11,10 @@ namespace SMPlanner.Models
     {
         public int ID { get; set; }
 
+        [Required(ErrorMessage = "Please enter the Meeting Date.")]
         public int MeetingID { get; set; }
 
+        [Required(ErrorMessage = "Please enter a Topic.")]
         public int AssignmentTopicID { get; set; }
 
 
@@ -22,8 +24,6 @@ namespace SMPlanner.Models
 
         public Meeting Meeting { get; set; }
 
-
-        
         public AssignmentTopic AssignmentTopic { get; set; }
 
        
