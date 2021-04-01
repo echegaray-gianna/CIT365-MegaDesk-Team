@@ -24,6 +24,7 @@ namespace SMPlanner.Models
 
         public Meeting Meeting { get; set; }
 
+        [Display(Name = "Assignment Topic")]
         public AssignmentTopic AssignmentTopic { get; set; }
 
        

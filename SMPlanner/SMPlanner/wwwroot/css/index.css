@@ -1,0 +1,118 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1d1f29;
+    color: white;
+
+}
+main {
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+}
+header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    border-bottom: 1px solid white;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+}
+header .container {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+.container a {
+    margin: 0;
+    padding: 5px;
+}
+.text-center {
+    text-align: center;
+}
+header img {
+    width: 100px;
+}
+header p {
+    font-size: 2rem;
+    margin: 0;
+    padding: 7px 0 0 5px;
+    color: #ff7f50;
+}
+
+/*----------NAV----------*/
+.navbar-ul {
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    color: white;
+    margin-top: 40px;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+nav ul li a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 1px solid #ff7f50;
+    color: white;
+    border-radius: 3px;
+}
+nav ul li a:hover {
+    background-color: #ff7f50;
+
+}
+
+/*--------TABLE---------*/
+table {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid white;
+    padding: 10px;
+    color: white;
+}
+a {
+    color: #ff7f50;
+}
+/*---------EDIT FORM----------*/
+
+.edit-form {
+
+}
+.form-group {
+    display: grid;
+    grid-template-columns: 25% 40% 1fr;
+    margin: 5px;
+}
+.form-group .btn {
+    margin: 10px;
+    padding: 5px;
+}
+dt {
+    font-weight: 700;
+    color: #ff7f50;
+    margin-top: 8px;
+}
+main {
+    padding-bottom: 20px;
+}
+p .btn {
+    border: 1px solid #ff7f50;
+    background-color: #1d1f29;
+    color: #ff7f50;
+    padding: 5px;
+}
+    p .btn:hover {
+        background-color: #ff7f50;
+        color: #1d1f29;
+    }
